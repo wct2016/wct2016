@@ -1,0 +1,183 @@
+/*
+ * Common
+ */
+.toplevel_page_wordcamp-budget .wp-menu-image img {
+	margin-left: 9px;
+}
+
+#submitpost.wcb .misc-pub-section span {
+	font-weight: bold;
+}
+
+#submitpost.wcb .misc-pub-section input {
+	width: 100%;
+}
+
+#submitpost.wcb .misc-pub-section select {
+	font-weight: normal;
+}
+
+#save-action {
+	overflow: auto;	/* Without this the element collapses on Invoices because all of it's children are floated */
+}
+
+	#wcb-save-draft {
+		float: left;
+	}
+
+/* Forms */
+.wcb-form {
+	display: table;
+}
+
+.wcb-form li {
+	display: table-row;
+}
+
+	.wcb-form li.hidden {
+		display: none;
+	}
+
+.wcb-form li > label {
+	display: table-cell;
+	margin-bottom: 1em;
+	vertical-align: top;
+	font-weight: bold;
+}
+
+.wcb-form li > input,
+.wcb-form li > select,
+.wcb-form li > textarea,
+.wcb-form-input-wrapper {
+	display: table-cell;
+	margin-left: 1em;
+	margin-bottom: 1em;
+}
+
+.wcb-form-required {
+	color: #dc3232;
+}
+
+/* Make room for the required field indicator (*) */
+body.post-type-wcp_payment_request input.large-text,
+body.post-type-wcp_payment_request input.regular-text,
+body.post-type-wcp_payment_request textarea.large-text,
+body.post-type-wcp_payment_request .meta-box-sortables select {
+	width: 95%;
+}
+
+@media screen and ( max-width: 782px ) {
+	body.post-type-wcp_payment_request .form-table td textarea {
+		display: inline;
+		width: 95%;
+	}
+}
+
+
+/* margins from above selector aren't applied */
+.wcb-form-input-wrapper {
+	padding-left: 1em;
+	padding-bottom: 1em;
+}
+
+/* Files */
+.wcb_no_files_uploaded.active {
+	display: block;
+}
+
+#wcb_files .description {
+	margin-bottom: 1em;
+}
+
+.wcb_files_list li {
+	list-style-type: disc;
+	margin-left: 15px;
+}
+
+.form-table td p.wcb_no_files_uploaded {
+	margin-bottom: 1em;
+}
+
+
+/*
+ * Vendor Payments
+ */
+
+/* Payment methods */
+.payment_method_fields.active {
+	display: block;
+}
+
+tr#row-payment-method label {
+	margin-right: 20px;
+}
+
+/* Log */
+#wcp_log .inside {
+	margin: 0;
+	padding: 0;
+}
+
+#wcp_log .wcp-request-log {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+#wcp_log .wcp-request-log td {
+	padding: 8px;
+}
+
+#wcp_log td.timestamp {
+	width: 130px;
+}
+
+
+/*
+ * Sponsor Invoices
+ */
+
+#wcbsi-billing-information {
+	overflow: auto;
+}
+
+#wcbsi-billing-contact {
+	padding-right: 1em;
+}
+
+#wcbsi-billing-contact,
+#wcbsi-billing-address {
+	float: left;
+	width: 50%;
+	box-sizing: border-box;
+}
+
+#submitpost.wcbsi #minor-publishing-actions {
+	text-align: left;
+}
+
+/* todo this also exists in Dashboard CSS, so maybe centralize */
+.wcbsi-inline-notice {
+	margin-bottom: 5px;
+	box-shadow:    none;
+	border-top:    1px solid rgba( 0, 0, 0, 0.1 );
+	border-right:  1px solid rgba( 0, 0, 0, 0.1 );
+	border-bottom: 1px solid rgba( 0, 0, 0, 0.1 );
+}
+
+
+/*
+ * Reimbursement Requests
+ */
+
+#normal-sortables #wcbrr_expenses.postbox .submit {
+	float: none;
+}
+
+.wcbrr-note {
+	margin-bottom: 1em;
+}
+
+	.wcbrr-note-meta {
+		font-weight: bold;
+	}
+

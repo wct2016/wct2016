@@ -44,24 +44,3 @@ $maxWidth           : 1280px;
 // $menuItemWidth     : ;
 // $menuItemHeight    : ;
 // $menuPadding       : ($menuHeight - $menuItemHeight) / 2; // Calclate padding size automatically
-
-//----------------------------------------------------------------------------
-// WordPress
-//----------------------------------------------------------------------------
-
-$include-wp-editor-styles: true;
-$include-wp-tinymce-styles: false;
-$include-wp-specific-classes: true;
-
-// editor styles
-$wp-editor-margin: 20px 0;
-
-// caption
-$wp-caption-margin: rem-calc(15);
-$wp-caption-text-font-size: rem-calc(12);
-
-// gallery
-$wp-gallery-margin: rem-calc(15);
-
-// alignment
-$wp-align-margin: rem-calc(15);

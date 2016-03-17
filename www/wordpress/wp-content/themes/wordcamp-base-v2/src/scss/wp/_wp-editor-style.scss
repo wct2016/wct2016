@@ -1,18 +1,64 @@
 @charset "utf-8";
 
-// WordPress editor styles.
-@include exports("wp-editor") {
+/* -------------------------------------------------------------- */
+/* WordPress editor styles
+/* -------------------------------------------------------------- */
+.entry-content {
 
-  @if $include-wp-editor-styles {
-
-    /* -------------------------------------------------------------- */
-    /* WordPress editor styles
-    /* -------------------------------------------------------------- */
-
-    .entry-content {
-      @include wp-editor-styles;
-    }
-
+  * {
+    margin: $wp-editor-margin;
   }
 
+  h1 {}
+  h2 {}
+  h3 {}
+  h4 {}
+  h5 {}
+  h6 {}
+
+  // set font size from h1 to h6
+  @for $i from 1 through 6 {
+    h#{$i} {
+      font-size: #{28 - $i*2}px;
+    }
+  }
+
+  p {}
+
+  a {}
+
+  dl {
+    dt {}
+    dd {}
+  }
+
+  ul, ol {
+  }
+
+  ul {
+    li {}
+  }
+
+  ol {
+    li {}
+  }
+
+  blockquote {
+    > * {}
+  }
+
+  pre {
+    >code {}
+  }
+  code {}
+
+  kbd {}
+
+  table {
+    thead {}
+    tbody {}
+    tr {}
+    th {}
+    td {}
+  }
 }

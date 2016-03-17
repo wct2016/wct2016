@@ -27,7 +27,7 @@ version: latest
 lang: ja
 title: WordCamp Tokyo 2016
 multisite: false
-rewrite_structure: /%post_id%
+rewrite_structure: /%postname%/
 
 #
 # WordPress Path

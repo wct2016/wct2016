@@ -139,7 +139,7 @@
 //----------------------------------------------------------------------------
 
 // Variables
-$buttonRadius: $baseRadius;
+$buttonRadius: $globalRadius;
 
 @mixin btnBase() {
   display: inline-block;
@@ -173,7 +173,7 @@ $buttonRadius: $baseRadius;
   }
   // radius
   @if $radius {
-    border-radius: $baseRadius;
+    border-radius: $globalRadius;
   }
   &:visited {
     color: $color;

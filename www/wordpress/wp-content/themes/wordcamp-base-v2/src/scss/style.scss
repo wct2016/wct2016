@@ -28,13 +28,12 @@ and Blueprint http://www.blueprintcss.org/
 @import 'core/sprite';
 
 // Foundation
-// Uncomment these belows if you use Foundation.
 // ----------------------------------------------------------------------------
-// @import 'core/foundation/settings';
-// @import 'core/foundation/foundation';
+@import 'core/foundation/settings';
+@import 'core/foundation/foundation';
 
 // Comment out if you use Foundation. You don't need use default.scss then.
-@import 'core/default';
+// @import 'core/default';
 
 // module
 // ----------------------------------------------------------------------------
@@ -47,4 +46,4 @@ and Blueprint http://www.blueprintcss.org/
 // WordPress
 // Uncomment if you build WordPress theme.
 // ----------------------------------------------------------------------------
-// @import 'wp/*.*';
+@import 'wp/*.*';

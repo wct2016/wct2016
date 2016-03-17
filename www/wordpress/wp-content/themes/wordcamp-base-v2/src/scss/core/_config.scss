@@ -1,0 +1,67 @@
+@charset "utf-8";
+
+//----------------------------------------------------------------------------
+// Color
+//----------------------------------------------------------------------------
+// primary
+$colorBase          : #333333;
+$colorSub           : #555555;
+$colorLink          : #24279f;
+$colorLinkHover     : lighten($colorLink, 15%);
+$colorSelection     : $colorLink;
+
+//----------------------------------------------------------------------------
+// Path
+//----------------------------------------------------------------------------
+$filePath           : "../images/";
+
+//----------------------------------------------------------------------------
+// Typography
+//----------------------------------------------------------------------------
+// primary
+$fontFamily         : "Helvetica Neue", "Helvetica", "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック","MS PGothic",Arial,Sans-Serif;
+// En
+$fontFamilyEn       : "Helvetica Neue", "Helvetica",Sans-Serif;
+// code
+$fontFamilyCode     : Menlo,Consolas,Courier,sans-serif;
+
+//----------------------------------------------------------------------------
+// Styles
+//----------------------------------------------------------------------------
+$baseRadius: 4px;
+
+//----------------------------------------------------------------------------
+// Block size
+//----------------------------------------------------------------------------
+// $containerWidth: ;
+$maxWidth           : 1280px;
+
+//----------------------------------------------------------------------------
+// Navigation size
+//----------------------------------------------------------------------------
+// $headerHeight      : ;
+// $menuHeight        : $headerHeight;
+// $menuItemWidth     : ;
+// $menuItemHeight    : ;
+// $menuPadding       : ($menuHeight - $menuItemHeight) / 2; // Calclate padding size automatically
+
+//----------------------------------------------------------------------------
+// WordPress
+//----------------------------------------------------------------------------
+
+$include-wp-editor-styles: true;
+$include-wp-tinymce-styles: false;
+$include-wp-specific-classes: true;
+
+// editor styles
+$wp-editor-margin: 20px 0;
+
+// caption
+$wp-caption-margin: rem-calc(15);
+$wp-caption-text-font-size: rem-calc(12);
+
+// gallery
+$wp-gallery-margin: rem-calc(15);
+
+// alignment
+$wp-align-margin: rem-calc(15);

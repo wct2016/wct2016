@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+/* -------------------------------------------------------------- */
+/* footer
+/* -------------------------------------------------------------- */
+/**
+ * site-footer
+ */
+.site-footer {}
+/**
+ * footer-widgets
+ */
+.footer-widgets {}
+/**
+ *  site-info
+ */
+.site-info {
+  a {}
+  &-generator {}
+  &-network {}
+}

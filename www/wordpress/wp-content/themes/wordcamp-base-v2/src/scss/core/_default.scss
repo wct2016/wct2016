@@ -1,0 +1,126 @@
+@charset "utf-8";
+
+/* -------------------------------------------------------------- */
+/* default style
+/* -------------------------------------------------------------- */
+
+/**
+ * the root element
+ */
+html {
+  font-size: 16px;
+}
+body {
+  background-color: #fff;
+  background-repeat: no-repeat;
+  color: $colorBase;
+  word-wrap: break-word;
+  font-family: $fontFamily;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  height: 100%;
+}
+
+/**
+ * grouping content
+ */
+iframe {
+  vertical-align: middle;
+}
+
+/**
+ * text-level semantics
+ */
+a {
+  color: $colorLink;
+  text-decoration: none;
+  word-wrap: break-word;
+  &:focus {
+    outline: thin dotted;
+  }
+  &:link,
+  &:visited {
+    color: $colorLink;
+  }
+  &:hover,
+  &:active,
+  &:focus {
+    outline: 0;
+    color: $colorLinkHover;
+    text-decoration: none;
+  }
+}
+p {
+  margin-bottom: 1.125em;
+  color: $colorBase;
+  &:last-child{
+    margin-bottom: 0;
+  }
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: $fontFamily;
+  &,
+  & > a {
+    color: $colorBase;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+::selection {
+  background: transparent;
+  background-color: $colorSelection;
+  color: $colorBase;
+}
+.fa {
+  display: inline-block;
+  text-decoration: none;
+}
+
+/**
+ * list items
+ */
+ul {
+  list-style-type: none;
+  margin-left: 0;
+}
+
+dl {
+  margin-bottom: 2em;
+  &:last-child{
+    margin-bottom: 0;
+  }
+  dt {
+    margin-bottom: 1em;
+  }
+  dd {
+    margin-bottom: 1em;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+}
+
+/**
+ * embedded content
+ */
+img {
+  line-height: 1.0;
+  border: 0;
+}
+svg:not(:root){
+  overflow: hidden;
+}
+
+/**
+ * table
+ */
+table {
+  font: 100%;
+  font-size: inherit;
+  border-spacing: 0;
+  border-collapse: collapse;
+}

@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+/* -------------------------------------------------------------- */
+/* layout
+/* -------------------------------------------------------------- */
+/**
+ * body
+ */
+body {}
+/**
+ * main
+ */
+#main {}
+/**
+ * primary-sidebar
+ */
+#primary-sidebar {}
+/**
+ * after-header-widgets
+ */
+#after-header-widgets {
+  margin-bottom: 0;
+}
+/**
+ * 404
+ s*/
+body.error404 {
+  #primary {}
+  .not-found {}
+}

@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+/* -------------------------------------------------------------- */
+/* buttons
+/* -------------------------------------------------------------- */
+
+.btn {
+  @include btn(
+    $colorBg: #0099cc,
+    $color: #ffffff,
+    $fontSize: 16px
+  );
+}
+.btnFull {
+  @include btn(
+    $colorBg: #0099cc,
+    $color: #ffffff,
+    $fontSize: 16px,
+    $fullWidth: true
+  );
+}
+.btnGhost {
+  @include btnGhost(
+    $color: #555555,
+    $colorHover: #ffffff,
+    $fontSize: 16px,
+    $radius: true
+  );
+}

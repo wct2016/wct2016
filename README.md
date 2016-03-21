@@ -1,42 +1,67 @@
-# VCCW
+# WordCamp Tokyo 2016 Theme Development
 
-This is a Vagrant configuration designed for development of WordPress plugins, themes, or websites.
+vccw + gulp + Foundation
 
-To get started, check out <http://vccw.cc/>
+## Requires
 
-## Configuration
+- Virtual Box: v5.0.x
+- Vagrant: v5.8.x
+- Node.js
+- npm
 
-1. Copy `provision/default.yml` to `site.yml`.
-1. Edit the `site.yml`.
-1. Run `vagrant up`.
+## Setup
 
-### Note
+1. Install [Virtual Box](https://www.virtualbox.org/wiki/Downloads).
+1. Install [Vagtant](https://www.vagrantup.com/downloads.html).
+1. Clone this repository.
 
-* The `site.yml` has to be in the same directory with Vagrantfile.
-* You can put just difference to the `site.yml`.
+        $ git clone git@github.com:wct2016/wct2016.git wct2016
 
-## Contribute
+1. Start vccw.
 
-### Setting up
+        $ cd wct2016; vagrant up
 
-1. Clone this git repository on your local machine.
-2. Run `bundle install` to fetch all dependencies.
+1. Install Node.js and npm. Recommend [Homebrew](http://brew.sh/).
+1. Change the directory to `../themes/wordcamp-base-v2/`.
 
-### Running and writing tests
+        $ cd www/wordpress/wp-content/themes/wordcamp-base-v2/
 
-There is automated tests using [Serverspec](http://serverspec.org/).
+1. Install some dependencies.
 
-The tests files are in the `spec/` directory.
+        $ npm install
+
+1. Run gulp.
+
+        $ npm run gulp
 
 
-Before running the serverspec tests, you'll need some dependencies.
+## Third Party Recourses
 
+### vccw
 ```
-$ bundle install --path=vendor/bundle
+provision/
+spec/
+www/
+Gemfile
+LICENSE
+Rakefile
+site.yml
+Vgrantfile
 ```
 
-Then to run the tests, just execute following.
+- License: MIT
+- Source: [http://vccw.cc](http://vccw.cc)
 
+### Foudnation
 ```
-$ bundle exec rake spec
+src/scss/core/foundation/
+src/scss/core/_settings.scss
+src/scss/core/_global.scss
+src/scss/core/_foundation.scss
 ```
+
+- License: MIT
+- Source: http://foundation.zurb.com/
+
+## License
+GNU GENERAL PUBLIC LICENSE Version 2

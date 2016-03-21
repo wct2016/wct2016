@@ -2,37 +2,35 @@
 
 vccw + gulp + Foundation
 
-日本語の README は[こちら](ja-README.md)
-
-## Requires
+## 必要なもの
 
 - Virtual Box: v5.0.x
 - Vagrant: v5.8.x
 - Node.js
 - npm
 
-## Setup
+## セットアップ
 
-1. Install [Virtual Box](https://www.virtualbox.org/wiki/Downloads).
-1. Install [Vagtant](https://www.vagrantup.com/downloads.html).
-1. Clone this repository.
+1. [Virtual Box](https://www.virtualbox.org/wiki/Downloads) をインストールします。
+1. [Vagtant](https://www.vagrantup.com/downloads.html) をインストールします。
+1. このリポジトリをクローンします。
 
         $ git clone git@github.com:wct2016/wct2016.git wct2016
 
-1. Start vccw.
+1. `wct2016/` にディレクトリを移動して、vccw を立ち上げます。
 
         $ cd wct2016; vagrant up
 
-1. Install Node.js and npm. Recommend [Homebrew](http://brew.sh/).
-1. Change the directory to `../themes/wordcamp-base-v2/`.
+1. [Homebrew](http://brew.sh/) から Node.js と npm をインストールします。
+1. テーマディレクトリ ( `../themes/wordcamp-base-v2/` ) に移動します。 
 
         $ cd www/wordpress/wp-content/themes/wordcamp-base-v2/
 
-1. Install some dependencies.
+1. 必要な node_modules をインストールします。
 
         $ npm install
 
-1. Run gulp.
+1. gulp を実行します。
 
         $ npm run gulp
 

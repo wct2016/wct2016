@@ -5,7 +5,7 @@ vccw + gulp + Foundation
 ## 必要なもの
 
 - Virtual Box: v5.0.x
-- Vagrant: v5.8.x
+- Vagrant: v1.8.x
 - Node.js
 - npm
 

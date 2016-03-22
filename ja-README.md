@@ -6,8 +6,8 @@ vccw + gulp + Foundation
 
 - Virtual Box: v5.0.x
 - Vagrant: v1.8.x
-- Node.js
-- npm
+- Node.js: v5.8.0 でテスト済み
+- npm: v3.8.1 でテスト済み
 
 ## セットアップ
 

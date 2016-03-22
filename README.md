@@ -8,8 +8,8 @@ vccw + gulp + Foundation
 
 - Virtual Box: v5.0.x
 - Vagrant: v1.8.x
-- Node.js
-- npm
+- Node.js: Tested on v5.8.0
+- npm: Tested on v3.8.1
 
 ## Setup
 

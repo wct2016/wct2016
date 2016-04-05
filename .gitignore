@@ -66,9 +66,6 @@ wp-content/wp-cache-config.php
 
 # Vagrant
 .vagrant/
-Gemfile
-Gemfile.lock
-Rakefile
 Vagrantfile.sample
 Vagrantfile.theme-review
 provision/packaging.sh

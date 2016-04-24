@@ -54,6 +54,10 @@ db_host: localhost
 # Plugin's slug or url to the plugin's slug.
 #
 plugins:
+  - jetpack
+  - akismet
+  - tinymce-templates
+  - wp-multibyte-patch
 
 #
 # WordPress Default Theme

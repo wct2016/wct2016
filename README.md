@@ -2,8 +2,6 @@
 
 vccw + gulp + Foundation
 
-日本語の README は[こちら](ja-README.md)
-
 ## Requires
 
 - Virtual Box: v5.0.x

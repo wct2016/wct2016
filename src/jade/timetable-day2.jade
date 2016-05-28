@@ -1,0 +1,70 @@
+include inc/core/_config
+include inc/core/_mixins
+extends inc/core/_base
+block title
+  title= page.top.title
+block prepend meta
+  - var sitename = name
+  - var keywords = page.top.keywords
+  - var description = page.top.description
+  - var ogpimage = page.top.ogpimage
+  - var bodyClass = ['page-id-2235', 'page-id-2428', 'page-id-1488']
+block append meta
+block body
+  .l-container
+    include inc/layout/_l-header
+    #main
+      #primary
+        #content
+          .entry-content
+            h2 タイムテーブル: コントリビューターデイ
+            p タイムテーブル及びテーマの詳細は現在調整中の箇所がございます。予告なく内容を変更する場合がありますので、あらかじめご了承ください。
+            dl
+              dt コミュニティ
+              dd あなたの地域でも、勉強会を初めてみよう！
+              dt コア
+              dd バグを修正してみよう！
+              dt パブリッシング
+              dd WordPress についての記事を書いてみよう！(情報の集め方、好まれる記事、正しい情報など)
+              dd 初心者にもオススメ
+              dt フォーラム
+              dd 質問に回答しよう！
+              dt 翻訳
+              dd WordPress の翻訳をやってみよう！(テーマ・プラグイン・Codex)
+              dt テーマ
+              dd テーマを作ったり、他の人のテーマをレビューしよう！
+              dt プラグイン
+              dd プラグインを作ってみよう！
+            //- timetable
+            table.timetable.timetable--flex(border="0")
+              thead
+                tr
+                  th.room(colspan="2") 3F Room1 + Room2
+              tbody
+                tr
+                  th.time.time--day2 9:30
+                  td.cell.cell--content 開場
+                tr
+                  th.time.time--day2 10:00
+                  td.cell.cell--content オリエンテーション
+                    br
+                    | ( 割り振り、説明、ライトセッションを予定 )
+                tr
+                  th.time.time--day2 11:00
+                  td.cell.cell--content 準備開始
+                tr
+                  th.time.time--day2 12:00
+                  td.cell.cell--content 休憩
+                tr
+                  th.time.time--day2 13:00
+                  td.cell.cell--content 作業開始
+                tr
+                  th.time.time--day2 16:00
+                  td.cell.cell--content 発表会
+                tr
+                  th.time.time--day2 17:00
+                  td.cell.cell--content 終了
+            //- .timetable end
+            a.btnFull(href="https://tokyo.wordcamp.org/2015/tickets/") 参加登録する!
+    include inc/layout/_l-footer
+block append scriptFooter

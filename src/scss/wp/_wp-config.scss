@@ -2,9 +2,6 @@
 // WordPress
 //----------------------------------------------------------------------------
 
-// editor styles
-$wp-editor-margin: 20px 0;
-
 // caption
 $wp-caption-margin: rem-calc(15);
 $wp-caption-text-font-size: rem-calc(12);
@@ -14,3 +11,11 @@ $wp-gallery-margin: rem-calc(15);
 
 // alignment
 $wp-align-margin: rem-calc(15);
+
+// editor styles
+%editorMargin {
+  margin: 20px 0;
+  @media #{$medium-up} {
+    margin: 30px 0;
+  }
+}

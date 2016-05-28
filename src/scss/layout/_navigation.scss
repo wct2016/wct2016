@@ -1,24 +1,110 @@
 @charset "utf-8";
 
-/* -------------------------------------------------------------- */
 /* navigation
-/* -------------------------------------------------------------- */
+/* ---------------------------------------- */
 
-.menu-toggle {}
-.main-navigation {}
-.main-small-navigation {}
+.menu-toggle {
+  width: 100%;
+  height: $navHeight;
+  margin: 0;
+  padding: 8px;
+  text-align: center;
+  background-color: $colorNav;
+  color: $colorWhite;
+  font-size: rem-calc(16);
+  cursor: pointer;
+}
+.main-navigation {
+  background-color: $colorNav;
+}
+.main-small-navigation {
+  width: 100%;
+  margin: 0;
+  background-color: $colorNavLighten;
+}
 .menu {
-	a {
-	}
-	&-item {
-	}
+  margin: 0 10px;
+  a {
+    display: block;
+    padding: $navPadding;
+    line-height: 1.0;
+    color: $colorWhite;
+    font-size: rem-calc(14);
+  }
+  &-item {
+    min-height: $navHeight;
+    border-top: 1px solid lighten($colorNav, 50%);
+  }
+  >li {
+    &:first-child {
+      border-top: none;
+    }
+  }
 }
 .sub-menu {
-	li {
-		a {
-		}
-	}
+  background-color: $colorNavLighten;
+  li {
+    min-height: $navHeight;
+    border-top: 1px dotted lighten($colorNav, 50%);
+    a {
+      color: $colorWhite;
+    }
+  }
 }
 /* media */
 @media screen and (min-width: 600px) {
+  .menu-main-container {
+    @include grid-row();
+  }
+  .main-navigation {
+    ul {
+      padding-left: 0;
+      ul {
+        position: absolute;
+        top: 2.6rem;
+        li {
+          width: 233px;
+        }
+        a {
+          width: 233px;
+        }
+      }
+    }
+  }
+  .menu {
+    height: $navHeight;
+    &-item {
+      border-bottom: none;
+      a {
+        color: #ffffff;
+        transition: 0.3s;
+        &:hover {
+          color: $colorBlack;
+          background-color: $colorWhite;
+        }
+      }
+    }
+    &-item-type-custom {
+      > a {
+        margin-right: 0;
+      }
+    }
+    >li {
+      border-top: none;
+    }
+  }
+  .sub-menu {
+    li {
+      margin: 0;
+      a {
+        color: $colorWhite;
+        background-color: $colorNavLighten;
+        transition: 0.2s;
+        &:hover {
+          color: $colorWhite;
+          background-color: $colorNav;
+        }
+      }
+    }
+  }
 }

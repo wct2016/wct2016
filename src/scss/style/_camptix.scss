@@ -1,0 +1,64 @@
+@charset "utf-8";
+
+/* camptix
+/* ---------------------------------------- */
+@media #{$small-only} {
+  .tix_tickets_table {
+    thead {
+      display: none;
+    }
+    td {
+      display: block;
+      &:before {
+        display: block;
+        color: lighten($colorText, 30%);
+        font-size: rem-calc(12);
+      }
+    }
+    .tix-column-price {
+      &:before {
+        content: "価格 / Price";
+      }
+    }
+    .tix-column-remaining {
+      &:before {
+        content: "残数 / Remaining";
+      }
+    }
+    .tix-column-quantity {
+      &:before {
+        content: "数 / Quantity";
+      }
+      select {
+        margin: 5px 0;
+      }
+    }
+  }
+  .tix-order-summary {
+    td.tix-column-description {
+      display: block;
+      width: 100%;
+    }
+  }
+  .tix-attendee-form {
+    tr {
+      td.tix-left {
+        display: block;
+        width: 100% ;
+      }
+      td.tix-right {
+        display: block;
+        width: 100% ;
+      }
+    }
+  }
+  .tix-ticket-form {
+    thead {
+      display: none;
+    }
+    td {
+      display: block;
+      width: 100%;
+    }
+  }
+}

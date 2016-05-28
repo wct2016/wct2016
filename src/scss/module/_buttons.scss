@@ -1,29 +1,90 @@
-@charset "utf-8";
+@charset "UTF-8";
 
-/* -------------------------------------------------------------- */
 /* buttons
-/* -------------------------------------------------------------- */
-
-.btn {
-  @include btn(
-    $colorBg: #0099cc,
-    $color: #ffffff,
-    $fontSize: 16px
-  );
+/* ---------------------------------------- */
+html {
+  input[type="button"],
+  input[type="reset"],
+  input[type="submit"] {
+    // remove default styles
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    text-shadow: none;
+    &:focus {
+      outline: 0;
+    }
+    &:link,
+    &:visited {
+      color: #ffffff;
+    }
+    &:hover,
+    &:active,
+    &:focus {
+      background: transparent;
+      color: #ffffff;
+      outline: 0;
+      text-decoration: none;
+    }
+    // set button style
+    @include buttonBase($colorOrange, rem-calc(16));
+  }
 }
-.btnFull {
-  @include btn(
-    $colorBg: #0099cc,
-    $color: #ffffff,
-    $fontSize: 16px,
-    $fullWidth: true
-  );
+/* for editor style */
+.entry-content {
+  .btn {
+    @include buttonBase($colorOrange, rem-calc(14));
+    font-size: rem-calc(16);
+  }
+  .btnFull {
+    @include buttonBase($colorOrange, rem-calc(14), true);
+    font-size: rem-calc(16);
+    &--disabled {
+      @include buttonBase($colorSilver, rem-calc(14), true);
+      &:hover {
+        background-color: $colorSilver;
+      }
+    }
+  }
 }
-.btnGhost {
-  @include btnGhost(
-    $color: #555555,
-    $colorHover: #ffffff,
-    $fontSize: 16px,
-    $radius: true
-  );
+/* register */
+.btnRegister {
+  @include buttonBase($colorOrange, rem-calc(16), $fullWidth: true);
+  &:before {
+    @include dashicons('\f486', $fontSize: 20px, $valign: middle);
+    margin-right: 8px;
+  }
+}
+/* sns */
+.btnFollow {
+  line-height: 1;
+  letter-spacing: 0.7px;
+  i[class^="genericon-"],
+  i[class*=" genericon-"] {
+    vertical-align: bottom;
+    margin-right: 5px;
+    line-height: 1;
+  }
+  &--tw {
+    @include buttonBase($colorTw, rem-calc(16), $fullWidth: true);
+    margin-top: 0;
+    margin-bottom: 8px;
+  }
+  &--fb {
+    @include buttonBase($colorFb, rem-calc(16), $fullWidth: true);
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+/* sessions */
+.btnProfile {
+  @include buttonBaseGhost($colorOrange, rem-calc(16), $fullWidth: false, $radius: true);
+  margin: 0;
+  padding: 0.4rem 0.6rem 0.46rem 0.6rem;
+}
+/* media */
+@media #{$small-only} {
+  a.btnRegister {
+    font-size: rem-calc(14);
+  }
 }

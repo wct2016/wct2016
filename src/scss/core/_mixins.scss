@@ -1,9 +1,25 @@
 @charset "utf-8";
 
-//----------------------------------------------------------------------------
+//***********************
+// full width layout
+// $name
+//***********************
+@mixin fullWidth($width) {
+  #secondary {
+    display: none;
+  }
+  #main,
+  #primary {
+    width: 100%;
+    max-width: $width;
+    margin: 0 auto;
+  }
+}
+
+//***********************
 // hasPseudoClass
 // $name
-//----------------------------------------------------------------------------
+//***********************
 @mixin hasPseudoClass($loc:false, $position: absolute){
   position: relative;
   @if $loc == before{
@@ -28,11 +44,11 @@
   }
 }
 
-//----------------------------------------------------------------------------
-// imgReplace
+//***********************
+// imageReplace
 // @param $name
-//----------------------------------------------------------------------------
-@mixin imgReplace($path, $imgWidth, $imgHeight, $scale: 1, $position: 0 0, $size: 100%, $repeat: no-repeat){
+//***********************
+@mixin imageReplace($path, $imgWidth, $imgHeight, $scale: 1, $position: 0 0, $size: 100%, $repeat: no-repeat){
   display: block;
   overflow: hidden;
   padding-top: $imgHeight * $scale;
@@ -44,10 +60,10 @@
   background-repeat: $repeat;
 }
 
-//----------------------------------------------------------------------------
+//***********************
 // Sprite css image replacement (Medium size)
 // @param $name
-//----------------------------------------------------------------------------
+//***********************
 @mixin sprite-ir($sprite, $scale: 1, $display: block){
   @include sprite-image($sprite);
   $sprite-offset-x: nth($sprite, 3) * $scale;
@@ -63,17 +79,16 @@
 }
 
 
-//----------------------------------------------------------------------------
+//***********************
 // web font
-//----------------------------------------------------------------------------
+//***********************
 // use genericon
-@mixin genericon($content:'\f100', $fontsize: 16px, $valaign: text-bottom, $position: static, $display: inline-block, $line-height: 1em){
+@mixin genericon($content:'\f100', $valaign: text-bottom, $position: static, $display: inline-block, $line-height: 1em){
   position: $position;
   display: $display;
   content: $content;
   vertical-align: $valaign;
-  font-size: $fontsize;
-  font-family: Genericons;
+  font-family: 'Genericons';
   line-height: $line-height;
 }
 // use font-awesome
@@ -88,10 +103,27 @@
   font-family: FontAwesome;
   -webkit-font-smoothing: antialiased;
 }
+// use dashicons
+@mixin dashicons($content: '\f100', $display: inline-block, $lineHeight: 1, $fontSize: 16px, $valign: top) {
+  display: $display;
+  content: $content;
+  width: $fontSize;
+  height: $fontSize;
+  font-size: $fontSize;
+  vertical-align: $valign;
+  line-height: $lineHeight;
+  font-family: dashicons;
+  text-decoration: inherit;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-//----------------------------------------------------------------------------
+//***********************
 // css graphic
-//----------------------------------------------------------------------------
+//***********************
 // Triangle
 @mixin triangle($direction, $width, $height, $color) {
   width: 0;
@@ -133,63 +165,54 @@
   }
 }
 
-//----------------------------------------------------------------------------
-// button
-// $name
-//----------------------------------------------------------------------------
+// Center block
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-// Variables
-$buttonRadius: $globalRadius;
-
-@mixin btnBase() {
+//***********************
+// button Base
+//***********************
+@mixin buttonBase($color, $fontSize, $fullWidth: false) {
   display: inline-block;
   margin: 1rem 0;
   padding: 0.875rem 1.75rem 0.9375rem 1.75rem;
   text-align: center;
-  &:focus {
-    outline: 0;
-  }
-  &:hover,
-  &:active,
-  &:focus {
-    outline: 0;
-    text-decoration: none;
-  }
-}
-
-@mixin btn($colorBg, $color, $fontSize, $fullWidth: false, $boxShadow: false, $radius: false) {
-  @include btnBase;
-  background-color: $colorBg;
-  color: $color;
+  box-shadow: 0 3px 0 darken($color, 6%);
+  background-color: $color;
+  color: #ffffff;
   font-size: $fontSize;
   transition: background-color 300ms ease-out;
   // set $fullWidth
   @if $fullWidth {
     width: 100%;
   }
-  // box shadow
-  @if $boxShadow {
-    box-shadow: 0 3px 0 darken($colorBg, 6%);
+  &:focus {
+    outline: 0;
   }
-  // radius
-  @if $radius {
-    border-radius: $globalRadius;
-  }
+  &:link,
   &:visited {
-    color: $color;
+    color: #ffffff;
   }
   &:hover,
   &:active,
   &:focus {
-    background-color: darken($colorBg, 7%);
-    color: $color;
+    background-color: darken($color, 8%);
+    color: #ffffff;
+    outline: 0;
+    text-decoration: none;
   }
 }
 
-@mixin btnGhost($color, $colorHover, $fontSize, $fullWidth: false, $radius: false) {
-  @include btnBase;
+@mixin buttonBaseGhost($color, $fontSize, $fullWidth: false, $radius:false) {
+  display: inline-block;
+  margin: 1rem 0;
+  padding: 0.875rem 1.75rem 0.9375rem 1.75rem;
+  text-align: center;
   background-color: transparent;
-  border: 2px solid $color;
+  border: 1px solid $color;
   color: $color;
   font-size: $fontSize;
   transition: 0.3s;
@@ -199,7 +222,10 @@ $buttonRadius: $globalRadius;
   }
   // set border-radius
   @if $radius {
-    border-radius: $buttonRadius;
+    border-radius: 6px;
+  }
+  &:focus {
+    outline: 0;
   }
   &:link,
   &:visited {
@@ -209,6 +235,8 @@ $buttonRadius: $globalRadius;
   &:active,
   &:focus {
     background-color: $color;
-    color: $colorHover;
+    color: #ffffff;
+    outline: 0;
+    text-decoration: none;
   }
 }

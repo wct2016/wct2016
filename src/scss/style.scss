@@ -19,21 +19,20 @@ along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normali
 and Blueprint http://www.blueprintcss.org/
 */
 
+// icons
+// ----------------------------------------------------------------------------
+@import 'https://tokyo.wordcamp.org/2015/wp-content/plugins/jetpack/_inc/genericons/genericons/genericons.css';
+@import 'https://tokyo.wordcamp.org/2015/wp-content/plugins/tagregator/includes/font-awesome/css/font-awesome.min.css';
+@import 'https://tokyo.wordcamp.org/2015/wp-includes/css/dashicons.min.css';
+
 // core files
 // ----------------------------------------------------------------------------
 @import 'core/config';
-@import 'core/functions';
+@import 'core/default';
 @import 'core/placeholder';
 @import 'core/mixins';
-@import 'core/sprite';
-
-// Foundation
-// ----------------------------------------------------------------------------
-@import 'core/foundation/settings';
-@import 'core/foundation/foundation';
-
-// Comment out if you use Foundation. You don't need use default.scss then.
-// @import 'core/default';
+@import 'core/settings';
+@import 'core/foundation';
 
 // module
 // ----------------------------------------------------------------------------
@@ -42,6 +41,10 @@ and Blueprint http://www.blueprintcss.org/
 // layout
 // ----------------------------------------------------------------------------
 @import 'layout/*.*';
+
+// style
+// ----------------------------------------------------------------------------
+@import 'style/*.*';
 
 // WordPress
 // ----------------------------------------------------------------------------

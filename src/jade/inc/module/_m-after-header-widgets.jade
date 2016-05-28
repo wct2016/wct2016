@@ -1,0 +1,36 @@
+//- mixin
+mixin isDisabled(href, title)
+  a.isDisabled(href=href)
+    i.dashicons(class!=attributes.class)
+    h2.widgetFeatured__title=title
+    p.widgetFeatured__text 準備中...
+mixin isActive(href, title, text)
+  a.isActive(href=href)
+    i.dashicons(class!=attributes.class)
+    h2.widgetFeatured__title=title
+    if block
+      block
+    else
+      p.widgetFeatured__text=text
+//- register
+.widgetRegister
+  .widgetRegister__columns
+    p.widgetRegister__text 今年の WordCamp Tokyo はベルサール神田で2日間の開催です。1日目はセッションやハンズオン、2日目はコントリビューターデイを企画しています!
+  .widgetRegister__columns
+    a.btnRegister(href="https://tokyo.wordcamp.org/2015/tickets/") 参加申し込みをする
+// / .widgetRegister
+//- featured
+.widgetFeatured
+  .widgetFeatured__columns.widgetFeatured__columns--four
+    +isActive('https://tokyo.wordcamp.org/2015/speakers/', 'スピーカー')(class='dashicons-megaphone')
+      p.widgetFeatured__text
+        span.widgetFeatured__label 新着
+        | 2015/9/27 第一弾発表!!
+  .widgetFeatured__columns.widgetFeatured__columns--four
+    +isDisabled('#', 'タイムテーブル')(class='dashicons-calendar-alt')
+  .widgetFeatured__columns.widgetFeatured__columns--four
+    +isActive('https://tokyo.wordcamp.org/2015/location/', 'アクセス', '会場までのルートをチェック!')(class='dashicons-location')
+  .widgetFeatured__columns.widgetFeatured__columns--four
+    +isDisabled('#', 'コントリビューターデイ')(class='dashicons-groups')
+// / .widgetFeatured
+

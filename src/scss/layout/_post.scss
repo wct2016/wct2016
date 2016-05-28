@@ -1,0 +1,216 @@
+@charset "utf-8";
+/* post archive
+/* ---------------------------------------- */
+/* page-header */
+.page-header {
+  margin-bottom: 20px;
+}
+.page-title {
+  margin-bottom: 0;
+  padding-bottom: 4px;
+  font-size: rem-calc(18);
+  border-bottom: 4px solid $colorWhite;
+  .vcard {
+    margin-bottom: 0;
+    padding: 0;
+    border: none;
+    a {
+      color: $colorBlack;
+      font-size: rem-calc(18);
+    }
+  }
+}
+/* paging-navigation */
+#nav-above {
+  display: none;
+}
+#nav-below {
+  margin: 20px 0;
+  padding: 0 10px;
+  a {
+    font-size: rem-calc(12);
+    @media #{$medium-up} {
+      font-size: rem-calc(14);
+    }
+  }
+  .nav-previous,
+  .nav-next {
+    padding: 0 10px;
+  }
+  .nav-next {
+    border-left: 4px solid #ffffff;
+  }
+}
+/* post
+/* ---------------------------------------- */
+.hentry {
+  margin-bottom: 40px;
+  background-color: #ffffff;
+  border: 1px solid lighten($colorSilver, 10%);
+  border-top: 2px solid $colorBlue;
+  border-bottom: 6px solid $colorBlue;
+}
+.entry-header {
+  padding-top: 10px;
+  .entry-meta {
+    padding: 0 20px 10px 20px;
+    background: lighten($colorGold, 5%);
+    color: $colorWhite;
+    font-size: rem-calc(12);
+    line-height: 1;
+  }
+  .entry-date {
+    color: $colorWhite;
+    font-weight: bold;
+  }
+  .vcard {
+    margin-bottom: 0;
+    padding: 0;
+    border: none;
+    font-size: rem-calc(12);
+    a {
+      color: $colorWhite;
+      font-size: rem-calc(12);
+    }
+  }
+}
+.entry-title {
+  margin-top: 10px;
+  margin-bottom: 0;
+  padding: 0 10px 20px 10px;
+  border-bottom: 10px solid lighten($colorGold, 5%);
+  line-height: 1.4;
+  font-size: rem-calc(20);
+  font-weight: normal;
+  a {
+    color: $colorBlack;
+    &:hover {
+      color: lighten($colorBlack, 24%);
+    }
+  }
+}
+.entry-content {
+  @extend %clearfix;
+  padding: 0 10px;
+}
+footer.entry-meta {
+  position: relative;
+  margin: 40px auto 120px auto;
+  padding: 0 20px;
+  color: $colorGold;
+  font-size: rem-calc(14);
+  &:after {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    width: 120px;
+    height: auto;
+    margin: 0 auto;
+    padding-bottom: 130px;
+    background-image: url($filePath + '08/img_entryFooter.png');
+    background-size: 120px auto;
+    background-position: 0 center;
+    background-repeat: no-repeat;
+    content: "";
+  }
+  a {
+    color: $colorGold;
+    font-weight: bold;
+    &:hover {
+      color: lighten($colorGold, 10%);
+    }
+  }
+}
+/* media */
+@media #{$medium-up} {
+  .hentry {
+    background-image: url($filePath + '09/bg_afterHeader.png');
+    background-repeat: repeat-x;
+    background-position: 0 0;
+    background-size: 30px auto;
+    border-top: none;
+  }
+  .entry-header {
+    position: relative;
+    &:before {
+      position: absolute;
+      bottom: -23px;
+      right: 0;
+      width: 60px;
+      height: 74px;
+      background-image: url($filePath + '08/img_kikyou.png');
+      background-repeat: no-repeat;
+      background-size: 60px auto;
+      content: "";
+    }
+  }
+  .entry-title {
+    margin-top: 34px;
+    padding: 0 60px 20px 20px;
+    padding-bottom: 14px;
+    font-size: rem-calc(28);
+    line-height: 1.5;
+  }
+  .entry-content {
+    padding: 0 20px;
+  }
+  footer.entry-meta {
+    margin: 40px auto 160px auto;
+    &:after {
+      width: 160px;
+      height: auto;
+      padding-bottom: 150px;
+      background-size: 160px auto;
+    }
+  }
+}
+@media #{$large-up} {
+  .entry-header {
+    &:before {
+      bottom: -24px;
+      width: 66px;
+      height: 80px;
+      background-size: 66px auto;
+    }
+    .entry-meta {
+      font-size: rem-calc(14);
+    }
+    .vcard {
+      margin-bottom: 0;
+      padding: 0;
+      border: none;
+      font-size: rem-calc(14);
+      a {
+        font-size: rem-calc(14);
+      }
+    }
+  }
+  .entry-title {
+    font-size: rem-calc(32);
+    padding-right: 66px;
+  }
+}
+/* page-links */
+.page-links {
+  padding: 10px;
+  border-top: 1px solid lighten($colorSilver, 10%);
+  border-bottom: 1px solid lighten($colorSilver, 10%);
+  a {
+    margin: 0 10px;
+    font-size: rem-calc(16);
+  }
+}
+/* comments */
+.comments-area {
+  padding: 10px 20px;
+  background-color: #ffffff;
+}
+.comments-title {
+  margin: 10px 0 20px 0;
+  font-size: rem-calc(18);
+}
+/* hiddden eyecatch */
+.attachment-post-thumbnail {
+  display: none;
+}

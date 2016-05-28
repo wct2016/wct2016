@@ -1,42 +1,22 @@
 @charset "utf-8";
+/* default styles
+/* ---------------------------------------- */
 
-/* -------------------------------------------------------------- */
-/* default style
-/* -------------------------------------------------------------- */
+@charset "utf-8";
+/* default styles
+/* ---------------------------------------- */
 
-/**
- * the root element
- */
-html {
-  font-size: 16px;
-}
-body {
-  background-color: #fff;
-  background-repeat: no-repeat;
-  color: $colorBase;
-  word-wrap: break-word;
-  font-family: $fontFamily;
-  font-weight: 300;
-  margin: 0;
-  padding: 0;
-}
-html, body {
-  height: 100%;
-}
-
-/**
- * grouping content
- */
+/* grouping content */
 iframe {
   vertical-align: middle;
 }
 
-/**
- * text-level semantics
- */
+/* text-level semantics */
 a {
+  cursor: pointer;
   color: $colorLink;
   text-decoration: none;
+  transition: 0.3s all;
   word-wrap: break-word;
   &:focus {
     outline: thin dotted;
@@ -55,7 +35,7 @@ a {
 }
 p {
   margin-bottom: 1.125em;
-  color: $colorBase;
+  color: $colorText;
   &:last-child{
     margin-bottom: 0;
   }
@@ -64,7 +44,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $fontFamily;
   &,
   & > a {
-    color: $colorBase;
+    color: $colorText;
     &:hover {
       text-decoration: none;
     }
@@ -73,21 +53,22 @@ h1, h2, h3, h4, h5, h6 {
 ::selection {
   background: transparent;
   background-color: $colorSelection;
-  color: $colorBase;
+  color: $colorText;
 }
 .fa {
   display: inline-block;
   text-decoration: none;
 }
-
-/**
- * list items
- */
-ul {
-  list-style-type: none;
-  margin-left: 0;
+.fontEn {
+  font-family: $fontFamilyEn;
 }
 
+/* list items */
+ul {
+  li {
+    list-style-type: none;
+  }
+}
 dl {
   margin-bottom: 2em;
   &:last-child{
@@ -104,9 +85,7 @@ dl {
   }
 }
 
-/**
- * embedded content
- */
+/* embedded content */
 img {
   line-height: 1.0;
   border: 0;
@@ -115,9 +94,7 @@ svg:not(:root){
   overflow: hidden;
 }
 
-/**
- * table
- */
+/* table */
 table {
   font: 100%;
   font-size: inherit;

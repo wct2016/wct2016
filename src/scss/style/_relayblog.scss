@@ -1,0 +1,118 @@
+@charset "utf-8";
+
+/* relay blog
+/* ---------------------------------------- */
+/* page layout */
+.page-id-2344,
+.page-id-2444,
+.page-id-1643, {
+  @include fullWidth(1080px);
+}
+/* advent calendar */
+.adventCalendar {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  border: none;
+  table-layout: fixed;
+  th,
+  td {
+    text-align: center;
+  }
+  th {
+    &.month {
+      background-color: $colorBlue;
+      color: #ffffff;
+    }
+    &.day {
+      background-color: $colorGold;
+      color: #ffffff;
+      border-left: 2px solid #ffffff;
+      border-right: 2px solid #ffffff;
+      border-bottom: 4px solid darken($colorGold, 20%);
+      &:last-child,
+      &:first-child {
+        border-left: none;
+        border-right: none;
+      }
+    }
+  }
+  td {
+    background-color: lighten(#fc0, 45%);
+    border: 2px solid #ffffff;
+    &.none {
+      background-color: lighten($colorBlue, 72%);
+    }
+    &.wct2015 {
+      background-color: $colorBlue;
+    }
+  }
+  .box {
+    min-height: 200px;
+    * {
+      word-wrap: break-word;
+    }
+    &__date {
+      color: $colorOrange;
+      font-style: normal;
+      font-weight: bold;
+    }
+    &__thumb {
+      width: 100%;
+      max-width: 60px;
+      margin: 0 auto;
+      > img {
+        border-radius: 50%;
+        border: 1px solid $colorGold;
+      }
+      img.wapuu {
+        border-radius: 0;
+        border: none;
+      }
+    }
+    &__name {
+      margin: 8px 0;
+      font-weight: bold;
+      font-size: rem-calc(12);
+      &--wct2015 {
+        color: #ffffff;
+      }
+    }
+    &__twitter {
+      margin: 8px 0;
+      line-height: 1;
+      a {
+        font-size: rem-calc(12);
+      }
+      &:before {
+        @include genericon($content: '\f202', $valaign: text-bottom);
+        margin-right: 3px;
+        font-size: rem-calc(13);
+        color: $colorTw;
+      }
+    }
+    &__title {
+      margin: 12px 0;
+      text-align: left;
+      font-size: rem-calc(13);
+      font-weight: bold;
+      &--wct2015 {
+        text-align: center;
+        color: #ffffff;
+      }
+    }
+  }
+}
+@media #{$small-only} {
+  .adventCalendar {
+    th {
+      display: block;
+      &.day {
+        display: none;
+      }
+    }
+    td {
+      display: block;
+    }
+  }
+}

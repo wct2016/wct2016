@@ -1,0 +1,152 @@
+@charset "utf-8";
+
+/* speakers
+/* ---------------------------------------- */
+.entry-content {
+  .speaker-avatar {
+    float: left;
+    .avatar {
+      border-radius: 50%;
+    }
+  }
+  .wcorg-speaker {
+    margin: 40px 0;
+    h2 {
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+    &-description {
+      @extend %clearfix;
+    }
+    .avatar {
+      display: block;
+      float: left;
+      border-radius: 50%;
+    }
+    &-right {
+      min-height: 100px;
+      padding-left: 120px;
+      margin-bottom: 10px;
+      > * {
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
+    }
+    &-belonging {
+      line-height: 1;
+    }
+    &-icons {
+      @extend %clearfix;
+      height: 28px;
+      li {
+        float: left;
+        margin-bottom: 0;
+        margin-left: 10px;
+        list-style-type: none;
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+    &-icon {
+      display: block;
+      width: rem-calc(28);
+      height: rem-calc(28);
+      text-align: center;
+      border-radius: 50%;
+      transition: 0.3s;
+      > i {
+        color: #ffffff;
+        font-size: 18px;
+        line-height: rem-calc(28);
+      }
+      > i.genericon-github {
+        color: $colorGh;
+        font-size: rem-calc(28);
+        transition: 0.3s;
+        &:hover {
+          color: $colorGhHover;
+        }
+      }
+      &--tw {
+        background-color: $colorTw;
+        &:hover {
+          background-color: $colorTwHover;
+        }
+      }
+      &--fb {
+        background-color: $colorFb;
+        &:hover {
+          background-color: $colorFbHover;
+        }
+      }
+    }
+    &-url {
+      line-height: 1;
+      a {
+        word-break: break-word;
+      }
+    }
+    &-info {
+      &-key {}
+      &-value {}
+      &-session {
+        margin-top: 0;
+        margin-bottom: 10px;
+        line-height: 1.4;
+        a {
+          font-size: rem-calc(18);
+        }
+      }
+    }
+    &-list {
+      margin-top: 0;
+      &-item {
+        margin-left: 0;
+        list-style: none;
+        line-height: 1;
+        &--stage {
+          &:before {
+            @include genericon('\f417');
+            font-size: rem-calc(16);
+          }
+        }
+        &--time {
+          &:before {
+            @include genericon('\f303');
+            font-size: rem-calc(16);
+          }
+        }
+      }
+    }
+  }
+}
+/* media */
+@media #{$small-only} {
+  .entry-content {
+    .wcorg-speaker {
+      margin: 20px 0;
+      &-right {
+        min-height: 70px;
+        padding-left: 90px;
+      }
+      .avatar {
+        width: 70px;
+        height: auto;
+      }
+    }
+    .speaker-avatar {
+      .avatar {
+        width: 70px;
+        height: auto;
+      }
+    }
+  }
+}
+/* WordPress markup */
+.speaker-sessions,
+#speaker-session-names,
+.session-speakers,
+#session-speaker-names {
+  display: none;
+}

@@ -1,0 +1,138 @@
+include inc/core/_config
+include inc/core/_mixins
+extends inc/core/_base
+block title
+  title= page.top.title
+block prepend meta
+  - var sitename = name
+  - var keywords = page.top.keywords
+  - var description = page.top.description
+  - var ogpimage = page.top.ogpimage
+  - var bodyClass = ['page-id-2344', 'page-id-2444', 'page-id-1643']
+block append meta
+block body
+  .l-container
+    include inc/layout/_l-header
+    #main
+      #primary
+        #content(style="background: #ffffff; padding: 40px auto;")
+          .entry-content
+            h2 リレーブログについて
+            p WordPress や WordCamp に関することを題材に、みなさんのブログ記事をリレー形式で繋げて行くイベントです!
+              br
+              | アドベントカレンダーで、ブログに書いて頂いた記事を WordCamp Tokyo 2015 サイト内でご案内していきます。
+              br
+              | WordPress に関する熱い思いや技術が繋がっています！
+            h3 アドベントカレンダー
+            table.adventCalendar
+              thead
+                tr
+                  th.month(colspan="7") 10月
+              tbody
+                tr
+                  th.day 日
+                  th.day 月
+                  th.day 火
+                  th.day 水
+                  th.day 木
+                  th.day 金
+                  th.day 土
+                tr
+                  td.none
+                    .box
+                      i.box__date 11
+                  td.none
+                    .box
+                      i.box__date 12
+                  td.none
+                    .box
+                      i.box__date 13
+                  td.none
+                    .box
+                      i.box__date 14
+                  td
+                    .box
+                      i.box__date 15
+                      .box__thumb
+                        img(src="https://s.gravatar.com/avatar/584c969221f685c4768b68c4eaca4c5e?s=120" alt="susumu1127")
+                      p.box__name Susumu Seino
+                      .box__twitter
+                        a(href="" target="_blank") susumu1127
+                      .box__title
+                        a(href="" target="_blank") WordPress を始めたい人の為の WordCamp へ行く前に読んでおくモノ
+                  td.none
+                    .box
+                      i.box__date 16
+                  td.none
+                    .box
+                      i.box__date 17
+                tr
+                  td.none
+                    .box
+                      i.box__date 18
+                  td.none
+                    .box
+                      i.box__date 19
+                  td.none
+                    .box
+                      i.box__date 20
+                  td
+                    .box
+                      i.box__date 21
+                      .box__thumb
+                        img(src="https://s.gravatar.com/avatar/584c969221f685c4768b68c4eaca4c5e?s=120" alt="@susumu1127")
+                      p.box__name Susumu Seino
+                      .box__twitter
+                        a(href="" target="_blank") susumu1127
+                      .box__title
+                        a(href="" target="_blank") WordPress を始めたい人の為の WordCamp へ行く前に読んでおくモノ
+                  td.none
+                    .box
+                      i.box__date 22
+                  td.none
+                    .box
+                      i.box__date 23
+                  td.none
+                    .box
+                      i.box__date 24
+                tr
+                  td.none
+                    .box
+                      i.box__date 25
+                  td.none
+                    .box
+                      i.box__date 26
+                  td.none
+                    .box
+                      i.box__date 27
+                  td.none
+                    .box
+                      i.box__date 28
+                  td
+                    .box
+                      i.box__date 29
+                      .box__thumb
+                        img(src="https://s.gravatar.com/avatar/82e5ed3cc0769fcdfc2219d60e87b8f4?s=120" alt="@susumu1127")
+                      p.box__name Susumu Seino
+                      .box__twitter
+                        a(href="" target="_blank") susumu1127
+                      .box__title
+                        a(href="" target="_blank") WordPress を始めたい人の為の WordCamp へ行く前に読んでおくモノ
+                  td
+                    .box
+                      i.box__date 30
+                      .box__thumb
+                        img(src="https://s.gravatar.com/avatar/d63bde1f928e04700a6d0e44816b604e?s=120" alt="megane9988")
+                      p.box__name Hajime Megane Ogushi
+                      .box__twitter
+                        a(href="" target="_blank") megane9988
+                      .box__title
+                        a(href="" target="_blank") “舞台に立とう” から “これからの WordPress の話をしよう” へ 【WordCamp のリレーブログ】
+                  td
+                    .box
+                      i.box__date 31
+                      p.box__title.box__title--wct2015 WordCamp
+                        br
+                        | Tokyo 2015
+    include inc/layout/_l-footer
+block append scriptFooter

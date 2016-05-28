@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+/* sessions
+/* ---------------------------------------- */
+.entry-content {
+  .wcorg-session {
+    margin: 30px 0;
+    &-subTitle {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    &-meta {}
+    &-speaker {
+      &:before {
+        @include genericon('\f304');
+        font-size: rem-calc(16);
+        margin-right: 4px;
+      }
+      &-list {
+        margin: 0;
+        li {
+          margin-left: 0;
+          list-style: none;
+        }
+      }
+      &-name {
+        margin-right: 10px;
+      }
+    }
+    &-stage {
+      &:before {
+        @include genericon('\f417');
+        font-size: rem-calc(16);
+        margin-right: 4px;
+      }
+    }
+    &-date {
+      &:before {
+        @include genericon('\f303');
+        font-size: rem-calc(16);
+        margin-right: 4px;
+      }
+    }
+  }
+}

@@ -1,46 +1,67 @@
 @charset "utf-8";
 
-//----------------------------------------------------------------------------
+//***********************
 // Color
-//----------------------------------------------------------------------------
-// primary
-$colorBase          : #333333;
-$colorSub           : #555555;
-$colorLink          : #24279f;
+//***********************
+
+// Theme color
+$colorWhite         : #ffffff;
+$colorBlack         : #222222;
+$colorBlue          : #0b346e;
+$colorOrange        : #ea851f;
+$colorRed           : #c3322c;
+
+// Sponsor
+$colorAccomplice    : #3094d1;
+$colorGold          : #c19534;
+$colorSilver        : #d3d3d3;
+$colorBronze        : #a46628;
+$colorMedia         : #8fbbcc;
+$colorSupport       : $colorMedia;
+
+// Text Color
+$colorText          : #333333;
+$colorLink          : lighten($colorBlue, 10%);
 $colorLinkHover     : lighten($colorLink, 15%);
-$colorSelection     : $colorLink;
+$colorSelection     : lighten($colorLink, 50%);
 
-//----------------------------------------------------------------------------
+// navigation
+$colorNav           : $colorBlack;
+$colorNavLighten    : lighten($colorBlack, 8%);
+
+// icons
+$colorTw            : #55acee;
+$colorTwHover       : lighten($colorTw, 10%);
+$colorFb            : #3b5998;
+$colorFbHover       : lighten($colorFb, 10%);
+$colorGh            : #333333;
+$colorGhHover       : lighten($colorGh, 10%);
+
+//***********************
 // Path
-//----------------------------------------------------------------------------
-$filePath           : "files/2016/";
+//***********************
+// $filePath         : "http://tokyo.wordcamp.org/files/2015/";
+$filePath           : "files/2015/";
 
-//----------------------------------------------------------------------------
-// Typography
-//----------------------------------------------------------------------------
+//***********************
+// Font Family
+//***********************
 // primary
-$fontFamily         : "Helvetica Neue", "Helvetica", "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック","MS PGothic",Arial,Sans-Serif;
+$fontFamily         : "Helvetica Neue", "Helvetica", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック","MS PGothic",Arial,Sans-Serif;
 // En
 $fontFamilyEn       : "Helvetica Neue", "Helvetica",Sans-Serif;
 // code
 $fontFamilyCode     : Menlo,Consolas,Courier,sans-serif;
 
-//----------------------------------------------------------------------------
-// Styles
-//----------------------------------------------------------------------------
-// border radius
-$globalRadius: 4px;
+//***********************
+// Colum Base Width
+//***********************
+$maxWidth           : 1080px;
 
-//----------------------------------------------------------------------------
-// Block size
-//----------------------------------------------------------------------------
-$maxWidth           : 1280px;
-
-//----------------------------------------------------------------------------
-// Navigation size
-//----------------------------------------------------------------------------
-// $headerHeight      : ;
-// $menuHeight        : $headerHeight;
-// $menuItemWidth     : ;
-// $menuItemHeight    : ;
-// $menuPadding       : ($menuHeight - $menuItemHeight) / 2; // Calclate padding size automatically
+//***********************
+// Navigation Size
+//***********************
+$navHeight         : 40px;
+// $navItemWidth   : ;
+$navItemHeight     : 12px;
+$navPadding        : ($navHeight - $navItemHeight) / 2; // Calclate padding size automatically

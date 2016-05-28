@@ -1,21 +1,57 @@
 @charset "utf-8";
 
-/* -------------------------------------------------------------- */
 /* footer
-/* -------------------------------------------------------------- */
-/**
- * site-footer
- */
-.site-footer {}
-/**
- * footer-widgets
- */
-.footer-widgets {}
-/**
- *  site-info
- */
+/* ---------------------------------------- */
+.site-footer {
+  padding: 60px 0;
+  padding-bottom: 0;
+  background: $colorBlue
+              url($filePath + '08/bg_footer.png')
+              repeat
+              0 0;
+}
+.footer-widgets {
+  @include grid-row();
+}
 .site-info {
-  a {}
-  &-generator {}
-  &-network {}
+  position: relative;
+  margin-top: 160px;
+  padding: 70px 0 60px 0;
+  text-align: center;
+  background-color: $colorBlack;
+  border-top: 1px solid lighten($colorGold, 30%);
+  &:after {
+    @include imageReplace('08/wapuu_mono.png', 122px, 145px);
+    position: absolute;
+    top: -80px;
+    left: 0;
+    right: 0;
+    width: 122px;
+    height: 145px;
+    margin: 0 auto;
+    content: "";
+    z-index: 10;
+  }
+  a {
+    width: 100%;
+    max-width: 280px;
+    display: block;
+    color: $colorWhite;
+    letter-spacing: 1.2px;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  &-generator {
+    margin: 5px auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 1px solid #ffffff;
+    font-size: rem-calc(13);
+    font-weight: bold;
+  }
+  &-network {
+    margin: 10px auto;
+    font-size: rem-calc(10);
+  }
 }

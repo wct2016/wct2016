@@ -6,7 +6,7 @@
 .entry-content {
 
   * {
-    margin: $wp-editor-margin;
+    @extend %editorMargin;
   }
 
   h1 {}

@@ -1,30 +1,55 @@
 @charset "utf-8";
-
-/* -------------------------------------------------------------- */
 /* layout
-/* -------------------------------------------------------------- */
-/**
- * body
- */
-body {}
-/**
- * main
- */
-#main {}
-/**
- * primary-sidebar
- */
-#primary-sidebar {}
-/**
- * after-header-widgets
- */
+/* ---------------------------------------- */
+body {
+  background-image: url($filePath + '08/bg_body.png');
+  background-repeat: repeat;
+  background-size: 64px 64px;
+  @media #{$small-only} {
+    position: static;
+  }
+}
+#main {
+  padding: 0 10px;
+}
+#primary-sidebar {
+  background-color: $colorWhite;
+}
+/* after-header-widgets */
 #after-header-widgets {
   margin-bottom: 0;
 }
-/**
- * 404
- s*/
+/* 404 */
 body.error404 {
-  #primary {}
-  .not-found {}
+  #primary {
+    @include grid-row();
+  }
+  .not-found {
+    @extend .hentry;
+  }
+}
+/* assistive text */
+.assistive-text {
+  display: none;
+}
+/* media */
+@media #{$medium-up} {
+  #main {
+    @include grid-row();
+    padding: 40px 0;
+  }
+  #primary {
+    @include grid-column(
+      $columns: 8,
+      $collapse: false,
+      $float:left
+    );
+  }
+  #secondary {
+    @include grid-column(
+      $columns: 4,
+      $collapse: false,
+      $float: right
+    );
+  }
 }

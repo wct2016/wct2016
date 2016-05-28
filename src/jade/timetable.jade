@@ -1,0 +1,378 @@
+include inc/core/_config
+include inc/core/_mixins
+extends inc/core/_base
+block title
+  title= page.top.title
+block prepend meta
+  - var sitename = name
+  - var keywords = page.top.keywords
+  - var description = page.top.description
+  - var ogpimage = page.top.ogpimage
+  - var bodyClass = ['page-id-2235', 'page-id-2428', 'page-id-1488']
+block append meta
+block body
+  .l-container
+    include inc/layout/_l-header
+    #main
+      #primary
+        #content
+          .entry-content
+            h2 タイムテーブル
+            p 初心者から上級者、開発者やブロガーの方など、多くの参加者に楽しんでもらえる様に幅広いセッションやハンズオンをご用意しました。
+              br
+              | ※ タイムテーブルは現在調整中の箇所がありますので、内容が変更になる場合があります。あらかじめご了承ください。
+            ul.target
+              li.target__item
+                i.dashicons.dashicons-heart
+                span 初心者
+              li.target__item
+                i.dashicons.dashicons-building
+                span ビジネス
+              li.target__item
+                i.dashicons.dashicons-editor-code
+                span 制作者
+              li.target__item
+                i.dashicons.dashicons-admin-tools
+                span 開発者
+              li.target__item
+                i.dashicons.dashicons-admin-customizer
+                span ブロガー
+            //- timetable
+            table.timetable(border="0")
+              thead
+                tr
+                  th.floor &nbsp;
+                  th.floor(colspan="1") 2F
+                  th.floor(colspan="5") 3F
+                //- Stage
+                tr
+                  th.room &nbsp;
+                  th.room 大ホール
+                  th.room Room1
+                  th.room Room2
+                  th.room Room3
+                  th.room Room5
+                  th.room Room6
+              tbody
+                //- Open
+                tr
+                  th.time 9:30
+                  td.open(colspan="6") 開場
+                //- Opening Ceremony
+                tr
+                  th.time 10:00
+                  td.cell.cell--hall 開会式
+                  td.cell--none &nbsp;
+                  td.cell--none &nbsp;
+                  td.cell--none &nbsp;
+                  td.cell--none &nbsp;
+                  td.cell--none &nbsp;
+                //- Sessions
+                tr
+                  th.time 10:10
+                  td.cell.cell--hall
+                    dl.session
+                      dt.session__title: a(href="#", title="基調講演") 基調講演
+                      dd.session__tag セッション
+                      dd.session__speaker: a(href="#", title="高野直子") 高野直子
+                  td.cell.cell--none &nbsp;
+                  td.cell.cell--none &nbsp;
+                  td.cell.cell--none &nbsp;
+                  td.cell.cell--none &nbsp;
+                  td.cell.cell--none &nbsp;
+                //- Breack
+                tr
+                  th.time 10:40
+                  td.break(colspan="6") 20分休憩 (10:40 ~ 11:00)
+                //- Sessions
+                tr
+                  th.time 11:00
+                  td.cell.cell--hall
+                    dl.session
+                      dt.session__title: a(href="#" title="タイトル未定") タイトル未定
+                      dd.session__tag セッション
+                      dd.session__speaker: a(href="#" title="Noel") Noel
+                  td.cell.cell--01
+                    dl.session
+                      dt.session__title: a(href="#" title="REST API の活用方法") REST API の活用方法
+                      dd.session__target: i.dashicons.dashicons-admin-tools
+                      dd.session__tag セッション
+                      dd.session__speaker: a(href="#" title="吉田 祐介") 吉田 祐介
+                  td.cell.cell--02
+                    dl.session
+                      dt.session__title: a(href="#" title="WordPress で作る焼き鳥ポータルサイト - 公式テーマ・プラグインと子テーマの活用 -") WordPress で作る焼き鳥ポータルサイト - 公式テーマ・プラグインと子テーマの活用 -
+                      dd.session__target: i.dashicons.dashicons-editor-code
+                      dd.session__tag セッション
+                      dd.session__speaker: a(href="#" title="小林 由憲") 小林 由憲
+                  td.cell.cell--03
+                    dl.session
+                      dt.session__title: a(href="#" title="失敗しない！ WordPress多言語サイト制作で絶対に知っておきたいこと") 失敗しない！ WordPress多言語サイト制作で絶対に知っておきたいこと
+                      dd.session__target: i.dashicons.dashicons-building
+                      dd.session__tag セッション
+                      dd.session__speaker: a(href="#" title="上野 勝之") 上野 勝之
+                  td.cell.cell--05(rowspan="3")
+                    dl.session
+                      dt.session__title: a(href="#" title="ドメイン取ってブログ作る") ドメイン取ってブログ作る
+                      dd.session__target
+                        i.dashicons.dashicons-heart
+                        i.dashicons.dashicons-admin-customizer
+                      dd.session__tag ハンズオン
+                      dd.session__speaker: a(href="#" title="白坂 翔") 白坂 翔
+                      dd.session__speaker: a(href="#" title="富安 一貴") 富安 一貴
+                  td.cell.cell--06(rowspan="3")
+                    dl.session
+                      dt.session__title: a(href="#" title="バックアップ＋リカバリー") バックアップ＋リカバリー
+                      dd.session__target: i.dashicons.dashicons-heart
+                      dd.session__tag ハンズオン
+                      dd.session__speaker: a(href="#" title="三柴 誠一郎") 三柴 誠一郎
+                      dd.session__speaker: a(href="#" title="小林 加奈子") 小林 加奈子
+                //- Break
+                tr
+                  th.time 11:30
+                  td.break(colspan="4") 20分休憩 (11:30 ~ 11:50)
+                //- Sessions
+                tr
+                  th.time 11:50
+                  td.cell.cell--hall
+                    dl.session
+                      dt.session__title: a(href="#" title="GPL") GPL
+                      dd.session__target: i.dashicons.dashicons-heart
+                      dd.session__tag セッション
+                      dd.session__speaker: a(href="#" title="西川 伸一") 西川 伸一
+                  td.cell.cell--01
+                    dl.session
+                      dt.session__title: a(href="#" title="中級アフィリエイターの実際") 中級アフィリエイターの実際
+                      dd.session__target: i.dashicons.dashicons-admin-customizer
+                      dd.session__tag セッション
+                      dd.session__speaker: a(href="#" title="土橋 一夫") 土橋 一夫
+                  td.cell.cell--02
+                    dl.session
+                      dt.session__title: a(href="#" title="WordPress で行う継続的インテグレーション入門編（仮）") WordPress で行う継続的インテグレーション入門編（仮）
+                      dd.session__target: i.dashicons.dashicons-admin-tools
+                      dd.session__tag セッション
+                      dd.session__speaker: a(href="#" title="占部 紘") 占部 紘
+                  td.cell.cell--03
+                    dl.session
+                      dt.session__title: a(href="#" title="WordPress 公式ディレクトリにテーマを登録しよう - 公式テーマ登録におけるマネタイズの考察 -") WordPress 公式ディレクトリにテーマを登録しよう - 公式テーマ登録におけるマネタイズの考察 -
+                      dd.session__target: i.dashicons.dashicons-editor-code
+                      dd.session__tag セッション
+                      dd.session__speaker: a(href="#" title="石川 栄和") 石川 栄和
+                //- Break
+                tr
+                  th.time 12:20
+                  td.break(colspan="6") お昼休憩 (12:20 ~ 13:10)
+                //- Sessions
+                tr
+                  th.time 13:10
+                  td.cell.cell--hall
+                    dl.session
+                      dt.session__title: a(href="#" title="") タイトル未定
+                      dd.session__tag ライトセッション
+                      dd.session__speaker: a(href="#" title="中島 真洋") 中島 真洋
+                  td.cell.cell--01(rowspan="2")
+                    dl.session
+                      dt.session__title: a(href="#" title="") リアルフォーラム
+                      dd.session__target: i.dashicons.dashicons-heart
+                      dd.session__tag 交流 / 質疑応答
+                      dd.session__speaker: a(href="#" title="大串 肇") 大串 肇
+                  td.cell.cell--02
+                    dl.session
+                      dt.session__title: a(href="#" title="") タイトル未定
+                      dd.session__tag ライトセッション
+                      dd.session__speaker: a(href="#" title="三木徹") 三木 徹
+                  td.cell.cell--03
+                    dl.session
+                      dt.session__title: a(href="#" title="") タイトル未定
+                      dd.session__tag ライトセッション
+                      dd.session__speaker: a(href="#" title="ファーストサーバー") ファーストサーバー
+                  td.cell.cell--05(rowspan="4")
+                    dl.session
+                      dt.session__title: a(href="#" title="_s と CSSフレームワークで始める公式テーマ開発入門ハンズオン") _s と CSS フレームワークで始める公式テーマ開発入門ハンズオン
+                      dd.session__target: i.dashicons.dashicons-heart
+                      dd.session__tag ハンズオン
+                      dd.session__speaker: a(href="#" title="岡本 秀高") 岡本 秀高
+                      dd.session__speaker: a(href="#" title="今井 瑞江") 今井 瑞江
+                  td.cell.cell--06(rowspan="4")
+                    dl.session
+                      dt.session__title: a(href="#" title="プライム MS 共催ハンズオン") プライムストラテジー・マイクロソフト 共催ハンズオン
+                      dd.session__target: i.dashicons.dashicons-editor-code
+                      dd.session__tag ハンズオン
+                      dd.session__speaker: a(href="#" title="藤 祐太郎") 藤 祐太郎
+                      dd.session__speaker: a(href="#" title="武田 正樹") 武田 正樹
+                      dd.session__speaker: a(href="#" title="大島 義裕") 大島 義裕
+                      dd.session__speaker: a(href="#" title="中通 浩一郎") 中通 浩一郎
+                      dd.session__speaker: a(href="#" title="小川 果純") 小川 果純
+                //- Session
+                tr
+                  th.time 13:20
+                  td.cell.cell--hall
+                    dl.session
+                      dt.session__title: a(href="#" title="epub") epub
+                      dd.session__target: i.dashicons.dashicons-editor-code
+                      dd.session__tag セッション
+                      dd.session__speaker: a(href="#" title="高橋 文樹") 高橋 文樹
+                  td.cell.cell--02
+                    dl.session
+                      dt.session__title: a(href="#" title="WordPress で行うシステム開発 (仮)") WordPress で行うシステム開発 (仮)
+                      dd.session__target: i.dashicons.dashicons-admin-tools
+                      dd.session__tag セッション
+                      dd.session__speaker: a(href="#" title="神垣 聡") 神垣 聡
+                  td.cell.cell--03
+                    dl.session
+                      dt.session__title: a(href="#" title="オープンソースとオープンデータ") オープンソースとオープンデータ
+                      dd.session__target: i.dashicons.dashicons-building
+                      dd.session__tag セッション
+                      dd.session__speaker: a(href="#" title="宮内 隆行") 宮内 隆行
+                //- Break
+                tr
+                  th.time 13:50
+                  td.break(colspan="4") 20分休憩 (13:50 ~ 14:10)
+                tr
+                  th.time 14:10
+                  td.cell.cell--hall
+                    dl.session
+                      dt.session__title: a(href="#" title="セキュリティ") セキュリティ
+                      dd.session__target: i.dashicons.dashicons-building
+                      dd.session__tag セッション
+                      dd.session__speaker: a(href="#" title="徳丸 浩") 徳丸 浩
+                  td.cell.cell--01
+                    dl.session
+                      dt.session__title: a(href="#" title="10分で WordPress サイトを作ることは可能か（仮）") 10分で　WordPress　サイトを作ることは可能か（仮）
+                      dd.session__target: i.dashicons.dashicons-editor-code
+                      dd.session__tag セッション
+                      dd.session__speaker: a(href="#" title="北島 卓") 北島 卓
+                  td.cell.cell--02
+                    dl.session
+                      dt.session__title: a(href="#" title="書き時を逃さないモブログ！Twitter感覚でブログを書こう！") 書き時を逃さないモブログ！Twitter感覚でブログを書こう！
+                      dd.session__target: i.dashicons.dashicons-admin-customizer
+                      dd.session__tag セッション
+                      dd.session__speaker: a(href="#" title="するぷ") するぷ
+                  td.cell.cell--03
+                    dl.session
+                      dt.session__title: a(href="#" title="WordBench 枠") WordBench 枠
+                      dd.session__target: i.dashicons.dashicons-heart
+                      dd.session__tag セッション
+                      dd.session__speaker: a(href="#" title="赤池 奈都美") 赤池 奈都美
+                      dd.session__speaker: a(href="#" title="小長谷 弥緒") 小長谷 弥緒
+                //- Break
+                tr
+                  th.time 14:50
+                  td.break(colspan="6") 20分休憩(14:50 ~ 15:10)
+                //- Session
+                tr
+                  th.time 15:10
+                  td.cell.cell--hall(rowspan="2")
+                    dl.session
+                      dt.session__title: a(href="#" title="しらべえ.com") しらべえ.com
+                      dd.session__target
+                        i.dashicons.dashicons-admin-customizer
+                        i.dashicons.dashicons-building
+                      dd.session__tag セッション
+                      dd.session__speaker: a(href="#" title="タカハシマコト") タカハシマコト
+                  td.cell.cell--01
+                    dl.session
+                      dt.session__title: a(href="#" title="タイトル未定") タイトル未定
+                      dd.session__tag ライトセッション
+                      dd.session__speaker: a(href="#" title="額賀 順子") 額賀 順子
+                  td.cell.cell--02
+                    dl.session
+                      dt.session__title: a(href="#" title="タイトル未定") タイトル未定
+                      dd.session__tag ライトセッション
+                      dd.session__speaker: a(href="#" title="さくらインターネット") さくらインターネット
+                  td.cell.cell--03
+                    dl.session
+                      dt.session__title: a(href="#" title="タイトル未定") タイトル未定
+                      dd.session__tag ライトセッション
+                      dd.session__speaker: a(href="#" title="田島 優也") 田島 優也
+                  td.cell.cell--05(rowspan="4")
+                    dl.session
+                      dt.session__title: a(href="#" title="Gulp や BrowserSync と WordPress を連携してテーマ作成の効率化") Gulp や BrowserSync と WordPress を連携してテーマ作成の効率化
+                      dd.session__target: i.dashicons.dashicons-editor-code
+                      dd.session__tag ハンズオン
+                      dd.session__speaker: a(href="#" title="長谷川 広武（´°ム°`）") 長谷川 広武（´°ム°`）
+                      dd.session__speaker: a(href="#" title="森川 徹志") 森川 徹志
+                      dd.session__speaker: a(href="#" title="占部 紘") 占部 紘
+                      dd.session__speaker: a(href="#" title="北島 卓") 北島 卓
+                  td.cell.cell--06(rowspan="4")
+                    dl.session
+                      dt.session__title: a(href="#" title="英語部屋") 英語部屋
+                      dd.session__tag.session__tag--forum 交流 / 質疑応答
+                      dd.session__speaker: a(href="#" title="担当者") 担当者
+                //- Sessions
+                tr
+                  th.time 15:20
+                  td.cell.cell--01: a.lt(href="#" title="タイトル未定") LT 大会
+                  td.cell.cell--02
+                    dl.session
+                      dt.session__title: a(href="#" title="町工場は「Marketing × WordPress」で仕事をつくる") 町工場は「Marketing × WordPress」で仕事をつくる
+                      dd.session__target: i.dashicons.dashicons-building
+                      dd.session__tag セッション
+                      dd.session__speaker: a(href="#" title="堀江 賢司") 堀江 賢司
+                  td.cell.cell--03
+                    dl.session
+                      dt.session__title: a(href="#" title="WooCommerce による EC サイト構築　～ WordPress を使った商品情報発信の新しいカタチ～") WooCommerce によるECサイト構築　～ WordPress を使った商品情報発信の新しいカタチ～
+                      dd.session__target: i.dashicons.dashicons-admin-tools
+                      dd.session__tag セッション
+                      dd.session__speaker: a(href="#" title="田中 昌平") 田中 昌平
+                      dd.session__speaker: a(href="#" title="楠木 大三郎") 楠木 大三郎
+                //- Break
+                tr
+                  th.time 15:50
+                  td.break(colspan="4") 20分休憩(15:50 ~ 16:10)
+                //- Sessions
+                tr
+                  th.time 16:10
+                  td.cell.cell--hall ―
+                  td.cell.cell--01: a.lt(href="#" title="LT大会") LT 大会
+                  td.cell.cell--02
+                    dl.session
+                      dt.session__title: a(href="#" title="ブログ運営〜個人と企業〜") ブログ運営〜個人と企業〜
+                      dd.session__target: i.dashicons.dashicons-admin-customizer
+                      dd.session__tag セッション
+                      dd.session__speaker: a(href="#" title="朽木 誠一郎") 朽木 誠一郎
+                      dd.session__speaker: a(href="#" title="大原 一起") 大原 一起
+                  td.cell.cell--03
+                    dl.session
+                      dt.session__title: a(href="#" title="ノンプログラマーのためのカンタン WordPress テーマ作成入門　〜子テーマでテーマ作成＆カスタマイズ〜") ノンプログラマーのためのカンタン WordPress テーマ作成入門　〜子テーマでテーマ作成＆カスタマイズ〜
+                      dd.session__target: i.dashicons.dashicons-editor-code
+                      dd.session__tag セッション
+                      dd.session__speaker: a(href="#" title="今井 瑞江") 今井 瑞江
+                //- After Party
+                tr
+                  th.time 16:40
+                  td.cell.cell--hall 懇親会入場開始
+                  td.cell.cell--none &nbsp;
+                  td.cell.cell--none &nbsp;
+                  td.cell.cell--none &nbsp;
+                  td.cell.cell--none &nbsp;
+                  td.cell.cell--none &nbsp;
+                tr
+                  th.time 17:00
+                  td.cell.cell--hall 懇親会
+                    br
+                    a.lt.lt--afterParty(href="#", title="LT 大会") 17:30~18:00 LT大会
+                  td.cell.cell--none &nbsp;
+                  td.cell.cell--none &nbsp;
+                  td.cell.cell--none &nbsp;
+                  td.cell.cell--none &nbsp;
+                  td.cell.cell--none &nbsp;
+                //- Ceremony
+                tr
+                  th.time 18:30
+                  td.cell.cell--hall 閉会式
+                  td.cell.cell--none &nbsp;
+                  td.cell.cell--none &nbsp;
+                  td.cell.cell--none &nbsp;
+                  td.cell.cell--none &nbsp;
+                  td.cell.cell--none &nbsp;
+            //- .timetable end
+            a.btnFull(href="https://tokyo.wordcamp.org/2015/tickets/")
+              i.dashicons.dashicons-tickets
+              | 参加申し込みをする
+            h3 ハンズオンについて
+            p ハンズオンの注意事項
+
+
+
+    include inc/layout/_l-footer
+block append scriptFooter

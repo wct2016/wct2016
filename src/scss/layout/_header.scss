@@ -10,17 +10,17 @@
   }
 }
 .site-header {
-  background-image: url($filePath + '07/pattern_main.png');
-  background-size: 100px;
+  background-image: url($filePath + '08/bg_header.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
   position: relative;
-  
   // wapuu
   &:after {
     @extend %hovering;
-    @include imageReplace('07/img_wapuu_2x.png', 426px, 562px, .5);
+    @include imageReplace('08/wapuu.png', 426px, 562px, .5);
     padding-top: 94px;
     position: absolute;
-    top: 42%;
+    top: 38%;
     right: 4%;
     width: 70px;
     height: auto;
@@ -30,46 +30,32 @@
 .site-title {
   margin: 0 auto;
   background-size: 100% auto;
-  padding-top: 110px;
-  padding-bottom: 80px;
   a {
     display: block;
     width: 100%;
     max-width: 300px;
-    height: 137px;
+    height: 300px;
     margin: 0 auto;
-    background-image: url($filePath + '07/img_title.png');
+    background-image: url($filePath + '08/bg_siteTitle.png');
     background-size: 100% auto;
     background-repeat: no-repeat;
     background-position: 0 10px;
     color: transparent;
   }
 }
-.header_top {
-  width: 100%;
-  height: 20px;
-  background-image: url($filePath + '07/pattern_sq.png');
-  position: absolute;
-  top: 0;
-  background-size: 48px;
-}
 .site-description {
   display: none;
 }
-
 /* media */
 @media screen and (max-width: 600px) {
   .site-header {
-    height: 330px;
+    height: 300px;
   }
 }
-
 @media #{$medium-up} {
   .site-header {
-    background-image: url($filePath + '07/pattern_main.png');
-    background-size: 110px;
     &:after {
-      top: 35%;
+      top: 38%;
       right: 4%;
       width: 130px;
       height: auto;
@@ -81,27 +67,16 @@
     background-size: 100% auto;
     a {
       max-width: 600px;
-      height: 263px;
+      height: 475px;
     }
   }
-  .header_top {
-    width: 100%;
-    height: 20px;
-    background-image: url($filePath + '07/pattern_sq.png');
-    position: absolute;
-    top: 0;
-    background-size: 48px;
-  }
 }
-
 @media #{$large-up} {
   .site-header {
-    background-image: url($filePath + '07/pattern_main.png');
-    background-size: 123px;
     &:after {
-      width: 160px;
+      width: 190px;
       height: auto;
-      top: 38%;
+      top: 24%;
       right: 10%;
       padding-top: 250px;
     }
@@ -111,71 +86,32 @@
     background-size: 100% auto;
     a {
       max-width: 620px;
-      height: 271px;
+      height: 475px;
     }
   }
-  .header_top {
-    width: 100%;
-    height: 20px;
-    background-image: url($filePath + '07/pattern_sq.png');
-    position: absolute;
-    top: 0;
-    background-size: 48px;
-  }
 }
-
 @media #{$xlarge-up} {
   .site-header {
-    background-image: url($filePath + '07/pattern_main.png');
-    background-size: 123px;
+    background-size: cover;
     &:after {
-      width: 190px;
-      height: auto;
-      top: 36%;
-      right: 10%;
-      padding-top: 295px;
+      right: 18%;
     }
   }
   .site-title {
     a {
       max-width: 800px;
-      height: 348px;
+      height: 680px;
     }
-  }
-  .header_top {
-    width: 100%;
-    height: 20px;
-    background-image: url($filePath + '07/pattern_sq.png');
-    position: absolute;
-    top: 0;
-    background-size: 48px;
   }
 }
-
 @media #{$xxlarge-up} {
   .site-header {
-    background-image: url($filePath + '07/pattern_main.png');
-    background-size: 123px;
-    &:after {
-      width: 220px;
-      height: auto;
-      top: 34%;
-      right: 10%;
-      padding-top: 295px;
-    }
-  }  
+    background-image: url($filePath + '08/bg_header_xLarge.jpg');
+  }
   .site-title {
     a {
       max-width: 900px;
-      height: 390px;
+      height: 740px;
     }
-  }
-  .header_top {
-    width: 100%;
-    height: 20px;
-    background-image: url($filePath + '07/pattern_sq.png');
-    position: absolute;
-    top: 0;
-    background-size: 48px;
   }
 }

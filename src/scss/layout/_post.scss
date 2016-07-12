@@ -132,7 +132,7 @@ footer.entry-meta {
     &:before {
     position: absolute;
     right: 30px;
-    bottom: -17px;
+    bottom: -12px;
     width: 39px;
     height: 38px;
     background-image: url("files/2016/07/img_kiku_orange.png");
@@ -165,7 +165,6 @@ footer.entry-meta {
 @media #{$large-up} {
   .entry-header {
     &:before {
-      top: 88px;
       right: 30px;
       width: 39px;
       height: 38px;

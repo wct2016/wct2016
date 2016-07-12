@@ -97,21 +97,6 @@ footer.entry-meta {
   padding: 0 20px;
   color: $colorGold;
   font-size: rem-calc(14);
-  &:after {
-    position: absolute;
-    top: 30px;
-    left: 0;
-    right: 0;
-    width: 120px;
-    height: auto;
-    margin: 0 auto;
-    padding-bottom: 130px;
-    background-image: url($filePath + '08/img_entryFooter.png');
-    background-size: 120px auto;
-    background-position: 0 center;
-    background-repeat: no-repeat;
-    content: "";
-  }
   a {
     color: $colorGold;
     font-weight: bold;
@@ -153,7 +138,7 @@ footer.entry-meta {
     padding: 0 20px;
   }
   footer.entry-meta {
-    margin: 40px auto 160px auto;
+    margin: 40px auto;
     &:after {
       width: 160px;
       height: auto;

@@ -19,7 +19,7 @@
     @include imageReplace('07/img_wapuu_2x.png', 426px, 562px, .5);
     padding-top: 94px;
     position: absolute;
-    top: 42%;
+    top: 23%;
     right: 4%;
     width: 70px;
     height: auto;
@@ -29,8 +29,7 @@
 .site-title {
   margin: 0 auto;
   background-size: 100% auto;
-  padding-top: 110px;
-  padding-bottom: 80px;
+  padding: 60px 0;
   a {
     display: block;
     width: 100%;
@@ -42,6 +41,9 @@
     background-repeat: no-repeat;
     background-position: 0 10px;
     color: transparent;
+  }
+  @media #{$medium-up} {
+    padding: 110px 0;
   }
 }
 .site-description {
@@ -57,13 +59,11 @@
 
 @media #{$medium-up} {
   .site-header {
-    background-image: url($filePath + '07/pattern_main.png');
     background-size: 110px;
     &:after {
       top: 35%;
-      right: 4%;
+      right: 6%;
       width: 130px;
-      height: auto;
       padding-top: 176px;
     }
   }
@@ -79,33 +79,21 @@
 
 @media #{$large-up} {
   .site-header {
-    background-image: url($filePath + '07/pattern_main.png');
     background-size: 123px;
     &:after {
       width: 160px;
-      height: auto;
       top: 38%;
       right: 10%;
       padding-top: 250px;
-    }
-  }
-  .site-title {
-    margin: 0 auto;
-    background-size: 100% auto;
-    a {
-      max-width: 620px;
-      height: 271px;
     }
   }
 }
 
 @media #{$xlarge-up} {
   .site-header {
-    background-image: url($filePath + '07/pattern_main.png');
     background-size: 123px;
     &:after {
       width: 190px;
-      height: auto;
       top: 36%;
       right: 10%;
       padding-top: 295px;
@@ -121,16 +109,14 @@
 
 @media #{$xxlarge-up} {
   .site-header {
-    background-image: url($filePath + '07/pattern_main.png');
     background-size: 123px;
     &:after {
       width: 220px;
-      height: auto;
       top: 34%;
       right: 10%;
       padding-top: 295px;
     }
-  }  
+  }
   .site-title {
     a {
       max-width: 900px;

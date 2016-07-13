@@ -16,6 +16,21 @@
   }
 }
 /**
+ * front page
+ */
+.home {
+  @extend %fullwidth;
+  .entry-content {
+    @media #{$medium-up} {
+      padding: 0 60px;
+    }
+    @media #{$large-up} {
+      padding: 0 140px;
+    }
+  }
+}
+
+/**
  * tickets
  */
 .page-id-537,

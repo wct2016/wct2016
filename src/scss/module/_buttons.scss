@@ -30,52 +30,23 @@ html {
     @include buttonBase($colorOrange, rem-calc(16));
   }
 }
-/* for editor style */
-.entry-content {
-  .btn {
-    @include buttonBase($colorOrange, rem-calc(14));
-    font-size: rem-calc(16);
-  }
-  .btnFull {
-    @include buttonBase($colorOrange, rem-calc(14), true);
-    font-size: rem-calc(16);
-    &--disabled {
-      @include buttonBase($colorSilver, rem-calc(14), true);
-      &:hover {
-        background-color: $colorSilver;
-      }
-    }
+.btn {
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 20px;
+  transition: .3s;
+}
+.btn-round {
+  background-color: $colorOrange;
+  color: #fff;
+  border-radius: 40px;
+  padding: 1rem 1.4rem;
+  &:hover {
+    color: #fff;
+    background-color: darken($colorOrange, 10%);
   }
 }
-/* register */
-.btnRegister {
-  @include buttonBase($colorOrange, rem-calc(16), $fullWidth: true);
-  &:before {
-    @include dashicons('\f486', $fontSize: 20px, $valign: middle);
-    margin-right: 8px;
-  }
-}
-/* sns */
-.btnFollow {
-  line-height: 1;
-  letter-spacing: 0.7px;
-  i[class^="genericon-"],
-  i[class*=" genericon-"] {
-    vertical-align: bottom;
-    margin-right: 5px;
-    line-height: 1;
-  }
-  &--tw {
-    @include buttonBase($colorTw, rem-calc(16), $fullWidth: true);
-    margin-top: 0;
-    margin-bottom: 8px;
-  }
-  &--fb {
-    @include buttonBase($colorFb, rem-calc(16), $fullWidth: true);
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-}
+
 /* sessions */
 .btnProfile {
   @include buttonBaseGhost($colorOrange, rem-calc(16), $fullWidth: false, $radius: true);

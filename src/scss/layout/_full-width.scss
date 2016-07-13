@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+/* full-width
+/* ---------------------------------------- */
+%fullwidth {
+  #primary {
+    @include grid-row();
+  }
+  #secondary {
+    display: none;
+  }
+  .entry-title {
+    @media #{$medium-up} {
+      text-align: center;
+    }
+  }
+}
+/**
+ * tickets
+ */
+.page-id-537,
+.page-id-2127,
+.page-id-2340 {
+  @extend %fullwidth;
+}

@@ -29,8 +29,8 @@ $colorLinkHover     : lighten($colorLink, 15%);
 $colorSelection     : lighten($colorLink, 50%);
 
 // navigation
-$colorNav           : $colorBlack;
-$colorNavLighten    : lighten($colorBlack, 8%);
+$colorNav           : darken($colorBrown, 4%);
+$colorNavLighten    : lighten($colorBrown, 8%);
 
 // icons
 $colorTw            : #55acee;
@@ -64,7 +64,7 @@ $maxWidth           : 1080px;
 //***********************
 // Navigation Size
 //***********************
-$navHeight         : 40px;
+$navHeight         : 48px;
 // $navItemWidth   : ;
-$navItemHeight     : 12px;
+$navItemHeight     : 14px;
 $navPadding        : ($navHeight - $navItemHeight) / 2; // Calclate padding size automatically

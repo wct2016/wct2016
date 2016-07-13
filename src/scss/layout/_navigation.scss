@@ -2,6 +2,13 @@
 
 /* navigation
 /* ---------------------------------------- */
+%navBase {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 9999;
+  margin: 0;
+}
 
 .menu-toggle {
   width: 100%;
@@ -9,21 +16,38 @@
   margin: 0;
   padding: 8px;
   text-align: center;
-  background-color: $colorNav;
   color: $colorWhite;
   font-size: rem-calc(16);
   cursor: pointer;
+  font-weight: normal;
+  &:after {
+    @include genericon($content:'\f431');
+    position: absolute;
+    top: 28px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    width: 12px;
+    height: 12px;
+  }
 }
 .main-navigation {
-  background-color: $colorNav;
+  @extend %navBase;
+  background-color: lighten($colorBrown, 5%);
+  ul {
+    a {
+      color: #fff;
+    }
+  }
 }
 .main-small-navigation {
-  width: 100%;
-  margin: 0;
-  background-color: $colorNavLighten;
+  @extend %navBase;
+  background-color: lighten($colorBrown, 5%);
 }
 .menu {
+  display: none;
   margin: 0 10px;
+  padding-left: 0;
   a {
     display: block;
     padding: $navPadding;
@@ -42,7 +66,6 @@
   }
 }
 .sub-menu {
-  background-color: $colorNavLighten;
   li {
     min-height: $navHeight;
     border-top: 1px dotted lighten($colorNav, 50%);
@@ -55,14 +78,28 @@
 @media screen and (min-width: 600px) {
   .menu-main-container {
     @include grid-row();
+    position: relative;
   }
   .main-navigation {
+    position: fixed;
+    top: 0;
+    .admin-bar & {
+      top: 46px;
+    }
     ul {
       padding-left: 0;
       margin-top: 0;
+      li {
+        &:hover {
+          ul {
+            display: block;
+          }
+        }
+      }
       ul {
+        display: none;
         position: absolute;
-        top: 2.6rem;
+        top: $navHeight;
         li {
           width: 233px;
         }
@@ -74,18 +111,35 @@
   }
   .menu {
     height: $navHeight;
+    display: flex;
+    align-items: center;
     &-item {
       border-bottom: none;
       a {
-        color: #ffffff;
+        color: #fff;
         transition: 0.3s;
         &:hover {
-          color: $colorBlack;
-          background-color: $colorWhite;
+          background-color: $colorNav;
+        }
+      }
+    }
+    &-item-has-children {
+      > a {
+        position: relative;
+        &:after {
+          @include genericon($content:'\f431');
+          position: absolute;
+          top: 32px;
+          right: 0;
+          left: 0;
+          margin: 0 auto;
+          width: 12px;
+          height: 12px;
         }
       }
     }
     &-item-type-custom {
+      position: relative;
       > a {
         margin-right: 0;
       }
@@ -95,6 +149,7 @@
     }
   }
   .sub-menu {
+    box-shadow: 0 2px 3px rgba(0,0,0,.3);
     li {
       margin: 0;
       a {
@@ -106,6 +161,13 @@
           background-color: $colorNav;
         }
       }
+    }
+  }
+}
+@media screen and (min-width: 783px) {
+  .main-navigation {
+    .admin-bar & {
+      top: 32px;
     }
   }
 }

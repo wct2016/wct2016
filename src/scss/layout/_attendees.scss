@@ -2,18 +2,6 @@
 
 /* attendees
 /* ---------------------------------------- */
-
-.page-id-535,
-.page-id-2338,
-.page-id-2130 {
-  #primary {
-    @include grid-row();
-  }
-  #secondary {
-    display: none;
-  }
-}
-/* camptix_attendees */
 .entry-content {
   #tix-attendees {
     .tix-columns-3 {

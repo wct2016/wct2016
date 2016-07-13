@@ -2,9 +2,6 @@
 
 /* camptix
 /* ---------------------------------------- */
-/**
- * tix
- */
 #tix {
   padding-top: 0;
   body.admin-bar & {
@@ -19,6 +16,10 @@
       width: 100%;
     }
   }
+}
+.tix-section {
+  margin-top: -68px;
+  padding-top: $navHeight;
 }
 .entry-content {
   .tix-nav {

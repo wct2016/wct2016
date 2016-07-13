@@ -29,12 +29,26 @@
     }
   }
 }
-
 /**
  * tickets
  */
 .page-id-537,
 .page-id-2127,
 .page-id-2340 {
+  @extend %fullwidth;
+}
+/**
+ * attendees
+ */
+/* general */
+.page-id-2132,
+.page-id-2338,
+.page-id-14 {
+  @extend %fullwidth;
+}
+/* micro sponsor */
+.page-id-585,
+.page-id-2512,
+.page-id-2132 {
   @extend %fullwidth;
 }

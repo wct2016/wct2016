@@ -2,7 +2,41 @@
 
 /* after header widgets
 /* ---------------------------------------- */
-
+#after-header-widgets {
+  position: relative;
+  margin-bottom: 0;
+}
+.l-widget {
+  @include grid-row();
+  margin-bottom: 40px;
+}
+/**
+ * desc
+ */
+.widgetDesc {
+  text-align: center;
+  &__title {
+    font-weight: normal;
+  }
+}
+/**
+ * english
+ */
+.widgetEn {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: $navHeight;
+  padding: 13px 0;
+  text-align: center;
+  background: rgba(0,0,0,.5);
+  @media #{$large-up} {
+    top: -128px;
+  }
+  a {
+    color: #fff;
+  }
+}
 /**
  * register
  */

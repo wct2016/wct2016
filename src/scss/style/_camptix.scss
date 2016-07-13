@@ -26,12 +26,29 @@
     padding: 10px 5px;
     ul {
       display: flex;
+      flex-wrap: wrap;
       margin: 0;
       li {
         list-style-type: none;
         margin: 0 10px;
         padding: 0 5px;
       }
+    }
+  }
+  .tix-submit {
+    select {
+      margin-bottom: 20px;
+    }
+  }
+}
+.tix-order-summary,
+.tix-attendee-form {
+  width: 100%;
+  .tix-right {
+    [type="text"],
+    [type="email"],
+    [type="url"] {
+      width: 100% !important;
     }
   }
 }

@@ -19,10 +19,20 @@
   color: $colorWhite;
   font-size: rem-calc(16);
   cursor: pointer;
+  font-weight: normal;
+  &:after {
+    @include genericon($content:'\f431');
+    position: absolute;
+    top: 28px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    width: 12px;
+    height: 12px;
+  }
 }
 .main-navigation {
   @extend %navBase;
-  // background-color: rgba(181,123,46,.9);
   background-color: lighten($colorBrown, 5%);
   ul {
     a {
@@ -73,8 +83,8 @@
   .main-navigation {
     position: fixed;
     top: 0;
-    .admin-bar {
-      top: 32px;
+    .admin-bar & {
+      top: 46px;
     }
     ul {
       padding-left: 0;
@@ -151,6 +161,13 @@
           background-color: $colorNav;
         }
       }
+    }
+  }
+}
+@media screen and (min-width: 783px) {
+  .main-navigation {
+    .admin-bar & {
+      top: 32px;
     }
   }
 }

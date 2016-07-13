@@ -4,7 +4,7 @@
 .entry-content {
   h1, h2, h3, h4, h5, h6,
   dl, ul, ol, p, small, blockquote, pre, table {
-    margin: 20px auto;
+    margin: 20px 0;
   }
   h1 {
     font-size: rem-calc(18);
@@ -139,7 +139,7 @@
   .entry-content {
     h1, h2, h3, h4, h5, h6,
     dl, ul, ol, p, small, blockquote, pre, table {
-      margin: 30px auto;
+      margin: 30px 0;
     }
     h1 {
       font-size: rem-calc(26);

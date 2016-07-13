@@ -52,8 +52,6 @@
 }
 .entry-header {
   padding-top: 10px;
-  background-image: url($filePath + '07/entry-header_border.png');
-  background-repeat: no-repeat;
   .entry-meta {
       display: none;
   }
@@ -109,7 +107,9 @@ footer.entry-meta {
 @media #{$medium-up} {
   .hentry {
     background-image: url($filePath + '07/bg_afterHeader.png');
-    background-repeat: no-repeat;
+    background-repeat: repeat-x;
+    background-position: 0 0;
+    background-size: 704px auto;
     border-top: none;
   }
   .entry-header {
@@ -192,8 +192,4 @@ footer.entry-meta {
 .comments-title {
   margin: 10px 0 20px 0;
   font-size: rem-calc(18);
-}
-/* hiddden eyecatch */
-.attachment-post-thumbnail {
-  display: none;
 }

@@ -24,17 +24,20 @@
  */
 .widgetEn {
   position: absolute;
-  top: 0;
+  top: -108px;
   width: 100%;
   height: $navHeight;
-  padding: 13px 0;
   text-align: center;
   background: rgba(0,0,0,.5);
-  @media #{$large-up} {
+  @media #{$medium-up} {
     top: -128px;
   }
   a {
+    display: block;
+    padding: 13px 0;
+    width: 100%;
     color: #fff;
+    margin: 0;
   }
 }
 /**

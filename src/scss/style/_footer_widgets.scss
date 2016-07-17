@@ -1,0 +1,60 @@
+@charset "utf-8";
+
+/* footer widgets
+/* ---------------------------------------- */
+.footer-widgets {
+  @include grid-row();
+}
+/**
+ * widgetSns
+ */
+%widgetIconPos {
+  top: 20px;
+  left: 20px;
+}
+.widgetSns {
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0;
+    li {
+      margin: 0 10px;
+    }
+  }
+  &__btn {
+    display: block;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    color: transparent;
+    font-size: rem-calc(20);
+    position: relative;
+    &:hover,
+    &:visited,
+    &:focus,
+    &:active {
+      color: transparent;
+    }
+    &:before {
+      color: #fff;
+      font-size: rem-calc(30);
+    }
+    &--tw {
+      background-color: $colorTw;
+      &:before {
+        @include genericon('\f202', $position: absolute);
+        @extend %widgetIconPos;
+
+      }
+    }
+    &--fb {
+      background-color: $colorFb;
+      &:before {
+        @include genericon('\f204', $position: absolute);
+        @extend %widgetIconPos;
+      }
+    }
+  }
+}

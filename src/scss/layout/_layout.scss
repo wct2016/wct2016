@@ -16,6 +16,9 @@ body {
 #primary-sidebar {
   background-color: $colorWhite;
 }
+#comments {
+  display: none;
+}
 /* 404 */
 body.error404 {
   #primary {

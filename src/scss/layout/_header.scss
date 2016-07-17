@@ -9,118 +9,88 @@
     margin-bottom: 80px;
   }
 }
+/**
+ * site-header
+ */
 .site-header {
   background-image: url($filePath + '07/pattern_main.png');
   background-size: 100px;
   position: relative;
+  // media query
+  @media #{$medium-up} {
+    background-size: 110px;
+  }
+  @media #{$large-up} {
+    background-size: 123px;
+  }
   // wapuu
   &:after {
     @extend %hovering;
     @include imageReplace('07/img_wapuu_2x.png', 426px, 562px, .5);
     padding-top: 94px;
     position: absolute;
-    top: 28%;
+    top: vmin-calc(120px);
     right: 4%;
     width: 70px;
     height: auto;
     content: "";
-  }
-}
-.site-title {
-  margin: 0 auto;
-  background-size: 100% auto;
-  padding: 80px 0;
-  a {
-    display: block;
-    width: 100%;
-    max-width: 300px;
-    height: 137px;
-    margin: 0 auto;
-    background-image: url($filePath + '07/img_title.png');
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-    background-position: 0 10px;
-    color: transparent;
-  }
-  @media #{$medium-up} {
-    padding: 110px 0;
-  }
-}
-.site-description {
-  display: none;
-}
-
-/* media */
-@media screen and (max-width: 600px) {
-  .site-header {
-    height: 330px;
-  }
-}
-
-@media #{$medium-up} {
-  .site-header {
-    background-size: 110px;
-    &:after {
+    // media query
+    @media #{$medium-up} {
+      width: 130px;
       top: 35%;
       right: 6%;
-      width: 130px;
       padding-top: 176px;
     }
-  }
-  .site-title {
-    margin: 0 auto;
-    background-size: 100% auto;
-    a {
-      max-width: 600px;
-      height: 263px;
-    }
-  }
-}
-
-@media #{$large-up} {
-  .site-header {
-    background-size: 123px;
-    &:after {
+    @media #{$large-up} {
       width: 160px;
       top: 38%;
       right: 10%;
       padding-top: 250px;
     }
-  }
-}
-
-@media #{$xlarge-up} {
-  .site-header {
-    background-size: 123px;
-    &:after {
+    @media #{$xlarge-up} {
       width: 190px;
       top: 36%;
       right: 10%;
       padding-top: 295px;
     }
-  }
-  .site-title {
-    a {
-      max-width: 800px;
-      height: 348px;
-    }
-  }
-}
-
-@media #{$xxlarge-up} {
-  .site-header {
-    background-size: 123px;
-    &:after {
+    @media #{$xxlarge-up} {
       width: 220px;
       top: 34%;
       right: 10%;
       padding-top: 295px;
     }
   }
-  .site-title {
-    a {
-      max-width: 900px;
-      height: 390px;
+}
+/**
+ * site-title
+ */
+.site-title {
+  margin: 0 auto;
+  padding: 80px 0;
+  @media #{$medium-up} {
+    padding: 110px 0;
+    margin: 0 auto;
+  }
+  a {
+    @include imageReplace('07/img_title.png', 100%, vmin-calc(167px), $position: 0 10px);
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+    color: transparent;
+    @media #{$medium-up} {
+      max-width: 600px;
+      padding-top: 293px;
+      // height: 293px;
+    }
+    @media #{$large-up} {
+      max-width: 800px;
+      height: 393px;
     }
   }
+}
+/**
+ * site-description
+ */
+.site-description {
+  display: none;
 }

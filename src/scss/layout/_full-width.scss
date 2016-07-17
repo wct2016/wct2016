@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+/* full-width
+/* ---------------------------------------- */
+%fullwidth {
+  #primary {
+    @include grid-row();
+  }
+  #secondary {
+    display: none;
+  }
+  .entry-title {
+    @media #{$medium-up} {
+      text-align: center;
+    }
+  }
+}
+/**
+ * front page
+ */
+.home {
+  @extend %fullwidth;
+  .entry-content {
+    @media #{$medium-up} {
+      padding: 0 60px;
+    }
+    @media #{$large-up} {
+      padding: 0 140px;
+    }
+  }
+}
+/**
+ * tickets
+ */
+.page-id-537,
+.page-id-2127,
+.page-id-2340 {
+  @extend %fullwidth;
+}
+/**
+ * attendees
+ */
+/* general */
+.page-id-2132,
+.page-id-2338,
+.page-id-14 {
+  @extend %fullwidth;
+}
+/* micro sponsor */
+.page-id-585,
+.page-id-2512,
+.page-id-2132 {
+  @extend %fullwidth;
+}

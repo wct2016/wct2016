@@ -2,7 +2,62 @@
 
 /* after header widgets
 /* ---------------------------------------- */
-
+#after-header-widgets {
+  position: relative;
+  margin-bottom: 0;
+}
+.l-widget {
+  @include grid-row();
+  margin-bottom: 40px;
+  padding: 0 14px;
+}
+/**
+ * desc
+ */
+.widgetDesc {
+  text-align: center;
+  &__title {
+    font-weight: normal;
+    font-size: rem-calc(18);
+    @media #{$medium-up} {
+      font-size: rem-calc(24);
+    }
+    @media #{$large-up} {
+      font-size: rem-calc(28);
+    }
+  }
+  &__text {
+    color: lighten($colorText, 10%);
+    font-size: rem-calc(12);
+    @media #{$medium-up} {
+      font-size: rem-calc(14);
+    }
+    @media #{$large-up} {
+      font-size: rem-calc(16);
+    }
+  }
+}
+/**
+ * english
+ */
+.widgetEn {
+  position: absolute;
+  top: -108px;
+  width: 100%;
+  height: $navHeight;
+  text-align: center;
+  background: rgba(0,0,0,.5);
+  @media #{$medium-up} {
+    top: -128px;
+  }
+  a {
+    display: block;
+    padding: 13px 0;
+    width: 100%;
+    color: #fff;
+    margin: 0;
+  }
+}
 /**
  * register
  */

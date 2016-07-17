@@ -2,6 +2,90 @@
 
 /* camptix
 /* ---------------------------------------- */
+#tix {
+  padding-top: 0;
+  body.admin-bar & {
+    padding-top: 0 !important;
+  }
+  input[type="submit"] {
+    display: block;
+    width: 360px;
+    margin: 0 auto;
+    float: none !important;
+    @media #{$small-only} {
+      width: 100%;
+    }
+  }
+}
+.tix-section {
+  margin-top: -68px;
+  padding-top: $navHeight;
+}
+.entry-content {
+  .tix-nav {
+    border: 1px solid $colorSilver;
+    padding: 10px 5px;
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
+      li {
+        list-style-type: none;
+        margin: 0 10px;
+        padding: 0 5px;
+      }
+    }
+  }
+  .tix-submit {
+    select {
+      margin-bottom: 20px;
+    }
+  }
+}
+.tix-order-summary,
+.tix-attendee-form {
+  width: 100%;
+  .tix-right {
+    [type="text"],
+    [type="email"],
+    [type="url"] {
+      width: 100% !important;
+    }
+  }
+}
+.tix_tickets_table {
+  thead {
+    background-color: darken($colorMedia, 20%);
+    th {
+      color: #fff;
+    }
+  }
+  tbody {
+    tr {
+      &:nth-of-type(odd) {
+        background-color: #fff;
+      }
+      &:nth-of-type(even) {
+        background-color: lighten($colorMedia, 26%);
+      }
+    }
+  }
+}
+.tix-column-description {
+  padding: 20px 10px;
+  @media #{$medium-up} {
+    width: 70%;
+  }
+}
+.tix-ticket-title {
+  display: block;
+  color: darken($colorMedia, 40%);
+}
+.tix-ticket-excerpt {
+  display: block;
+  font-size: rem-calc(13);
+  color: #555;
+}
 @media #{$small-only} {
   .tix_tickets_table {
     thead {

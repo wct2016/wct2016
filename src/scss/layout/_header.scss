@@ -10,17 +10,16 @@
   }
 }
 .site-header {
-  background-image: url($filePath + '08/bg_header.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-image: url($filePath + '07/pattern_main.png');
+  background-size: 100px;
   position: relative;
   // wapuu
   &:after {
     @extend %hovering;
-    @include imageReplace('08/wapuu.png', 426px, 562px, .5);
+    @include imageReplace('07/img_wapuu_2x.png', 426px, 562px, .5);
     padding-top: 94px;
     position: absolute;
-    top: 38%;
+    top: 28%;
     right: 4%;
     width: 70px;
     height: auto;
@@ -30,35 +29,41 @@
 .site-title {
   margin: 0 auto;
   background-size: 100% auto;
+  padding: 80px 0;
   a {
     display: block;
     width: 100%;
     max-width: 300px;
-    height: 300px;
+    height: 137px;
     margin: 0 auto;
-    background-image: url($filePath + '08/bg_siteTitle.png');
+    background-image: url($filePath + '07/img_title.png');
     background-size: 100% auto;
     background-repeat: no-repeat;
     background-position: 0 10px;
     color: transparent;
   }
+  @media #{$medium-up} {
+    padding: 110px 0;
+  }
 }
 .site-description {
   display: none;
 }
+
 /* media */
 @media screen and (max-width: 600px) {
   .site-header {
-    height: 300px;
+    height: 330px;
   }
 }
+
 @media #{$medium-up} {
   .site-header {
+    background-size: 110px;
     &:after {
-      top: 38%;
-      right: 4%;
+      top: 35%;
+      right: 6%;
       width: 130px;
-      height: auto;
       padding-top: 176px;
     }
   }
@@ -67,51 +72,55 @@
     background-size: 100% auto;
     a {
       max-width: 600px;
-      height: 475px;
+      height: 263px;
     }
   }
 }
+
 @media #{$large-up} {
   .site-header {
+    background-size: 123px;
     &:after {
-      width: 190px;
-      height: auto;
-      top: 24%;
+      width: 160px;
+      top: 38%;
       right: 10%;
       padding-top: 250px;
     }
   }
-  .site-title {
-    margin: 0 auto;
-    background-size: 100% auto;
-    a {
-      max-width: 620px;
-      height: 475px;
-    }
-  }
 }
+
 @media #{$xlarge-up} {
   .site-header {
-    background-size: cover;
+    background-size: 123px;
     &:after {
-      right: 18%;
+      width: 190px;
+      top: 36%;
+      right: 10%;
+      padding-top: 295px;
     }
   }
   .site-title {
     a {
       max-width: 800px;
-      height: 680px;
+      height: 348px;
     }
   }
 }
+
 @media #{$xxlarge-up} {
   .site-header {
-    background-image: url($filePath + '08/bg_header_xLarge.jpg');
+    background-size: 123px;
+    &:after {
+      width: 220px;
+      top: 34%;
+      right: 10%;
+      padding-top: 295px;
+    }
   }
   .site-title {
     a {
       max-width: 900px;
-      height: 740px;
+      height: 390px;
     }
   }
 }

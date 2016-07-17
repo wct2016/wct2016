@@ -5,29 +5,25 @@
 .site-footer {
   padding: 60px 0;
   padding-bottom: 0;
-  background: $colorBlue
-              url($filePath + '08/bg_footer.png')
-              repeat
-              0 0;
-}
-.footer-widgets {
-  @include grid-row();
+  // background: $colorBeige
+  //             url($filePath + '07/pattern_sq.png')
+  //             repeat
+  //             0 0;
+  background-color: $colorBeige;
 }
 .site-info {
   position: relative;
   margin-top: 160px;
   padding: 70px 0 60px 0;
   text-align: center;
-  background-color: $colorBlack;
+  background-color: darken($colorBrown, 8%);
   border-top: 1px solid lighten($colorGold, 30%);
   &:after {
-    @include imageReplace('08/wapuu_mono.png', 122px, 145px);
+    @include imageReplace('07/img_ougi.png', 120px, 124px);
     position: absolute;
-    top: -80px;
+    top: -52px;
     left: 0;
     right: 0;
-    width: 122px;
-    height: 145px;
     margin: 0 auto;
     content: "";
     z-index: 10;

@@ -5,6 +5,7 @@ body {
   background-image: url($filePath + '08/bg_body.png');
   background-repeat: repeat;
   background-size: 64px 64px;
+  background-color: #FFF8F0;
   @media #{$small-only} {
     position: static;
   }
@@ -15,9 +16,8 @@ body {
 #primary-sidebar {
   background-color: $colorWhite;
 }
-/* after-header-widgets */
-#after-header-widgets {
-  margin-bottom: 0;
+#comments {
+  display: none;
 }
 /* 404 */
 body.error404 {

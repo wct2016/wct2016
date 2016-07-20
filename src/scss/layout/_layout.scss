@@ -2,10 +2,7 @@
 /* layout
 /* ---------------------------------------- */
 body {
-  background-image: url($filePath + '08/bg_body.png');
-  background-repeat: repeat;
-  background-size: 64px 64px;
-  background-color: #FFF8F0;
+  background-color: $colorBeige;
   @media #{$small-only} {
     position: static;
   }

@@ -2,6 +2,32 @@
 
 /* buttons
 /* ---------------------------------------- */
+// extends
+%btnBase {
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 1rem 1.4rem;
+  transition: .3s;
+  border-radius: 40px;
+  font-size: rem-calc(16);
+  line-height: 1.3;
+}
+// mixin
+@mixin btnColor($bgColor, $color: #fff) {
+  background-color: $bgColor;
+  color: $color;
+  &:hover {
+    color: $color;
+    background-color: darken($bgColor, 8%);
+  }
+  &:visited {
+    color: $color;
+  }
+}
+/**
+ * Reset
+ */
 html {
   input[type="button"],
   input[type="reset"],
@@ -9,7 +35,6 @@ html {
     // remove default styles
     background: transparent;
     border: none;
-    border-radius: 0;
     text-shadow: none;
     &:focus {
       outline: 0;
@@ -21,41 +46,44 @@ html {
     &:hover,
     &:active,
     &:focus {
-      background: transparent;
       color: #ffffff;
       outline: 0;
       text-decoration: none;
     }
-    // set button style
-    @include buttonBase($colorOrange, rem-calc(16));
+    @extend %btnBase;
+    @include btnColor($colorOrange);
   }
 }
+/**
+ * styles
+ */
 .btn {
-  display: inline-block;
-  text-align: center;
-  margin-bottom: 20px;
-  transition: .3s;
+  @extend %btnBase;
+  @include btnColor($colorOrange);
 }
-.btn-round {
-  background-color: $colorOrange;
-  color: #fff;
-  border-radius: 40px;
-  padding: 1rem 1.4rem;
+.hollow {
+  background-color: transparent;
+  color: $colorOrange;
+  border: 1px solid $colorOrange;
   &:hover {
+    background-color: $colorOrange;
     color: #fff;
-    background-color: darken($colorOrange, 10%);
   }
+  &:visited {
+    color: $colorOrange;
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+.disabled {
+  background-color: $colorSilver;
+  &:hover {
+    background-color: $colorSilver;
+    cursor: not-allowed;
+  }
+}
+.full {
+  width: 100%;
 }
 
-/* sessions */
-.btnProfile {
-  @include buttonBaseGhost($colorOrange, rem-calc(16), $fullWidth: false, $radius: true);
-  margin: 0;
-  padding: 0.4rem 0.6rem 0.46rem 0.6rem;
-}
-/* media */
-@media #{$small-only} {
-  a.btnRegister {
-    font-size: rem-calc(14);
-  }
-}

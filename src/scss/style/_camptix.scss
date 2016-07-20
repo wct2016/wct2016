@@ -12,6 +12,7 @@
     width: 360px;
     margin: 0 auto;
     float: none !important;
+    margin-bottom: $navHeight;
     @media #{$small-only} {
       width: 100%;
     }

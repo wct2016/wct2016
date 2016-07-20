@@ -121,7 +121,7 @@ $colorNone        : lighten($colorSilver, 10%);
   }
 }
 .btnHandson {
-  @include buttonBase($colorLink, rem-calc(11), $fullWidth: true);
+  // @include buttonBase($colorLink, rem-calc(11), $fullWidth: true);
   margin: 6px 0;
   padding: 0.4rem;
   box-shadow: none;

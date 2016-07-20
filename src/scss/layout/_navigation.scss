@@ -21,11 +21,11 @@
   cursor: pointer;
   font-weight: normal;
   &:after {
-    @include genericon($content:'\f431');
+    @include fa($content: '\f107', $fontsize: 12px, $valaign: baseline);
     position: absolute;
     top: 28px;
     right: 0;
-    left: 0;
+    left: 2px;
     margin: 0 auto;
     width: 12px;
     height: 12px;
@@ -127,7 +127,7 @@
       > a {
         position: relative;
         &:after {
-          @include genericon($content:'\f431');
+          @include fa($content: '\f107', $fontsize: 12px, $valaign: baseline);
           position: absolute;
           top: 32px;
           right: 0;

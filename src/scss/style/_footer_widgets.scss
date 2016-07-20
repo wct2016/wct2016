@@ -9,8 +9,8 @@
  * widgetSns
  */
 %widgetIconPos {
-  top: 20px;
-  left: 20px;
+  position: absolute;
+  top: 5px;
 }
 .widgetSns {
   &__list {
@@ -29,8 +29,8 @@
     height: 70px;
     overflow: hidden;
     color: transparent;
-    font-size: rem-calc(20);
     position: relative;
+    transition: .3s;
     &:hover,
     &:visited,
     &:focus,
@@ -43,17 +43,25 @@
     }
     &--tw {
       background-color: $colorTw;
+      &:hover {
+        background-color: darken($colorTw, 10%);
+      }
       &:before {
-        @include genericon('\f202', $position: absolute);
+        @include fa($content: '\f099', $fontsize: rem-calc(40), $valaign: middle);
         @extend %widgetIconPos;
+        left: 16px;
 
       }
     }
     &--fb {
       background-color: $colorFb;
+      &:hover {
+        background-color: darken($colorFb, 10%);
+      }
       &:before {
-        @include genericon('\f204', $position: absolute);
+        @include fa($content: '\f09a', $fontsize: rem-calc(40), $valaign: middle);
         @extend %widgetIconPos;
+        left: 24px;
       }
     }
   }

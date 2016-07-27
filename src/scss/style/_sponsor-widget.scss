@@ -1,0 +1,114 @@
+@charset "utf-8";
+
+/* footer widgets
+/* ---------------------------------------- */
+/**
+ * footer-widget-2
+ */
+#footer-widget-2 {
+  background: url($filePath + "07/pattern_sq.png");
+  padding: 80px 0 160px 0;
+}
+/**
+ * wcb_widget_sponsors
+ */
+.wcb_widget_sponsors {
+  @include grid-row();
+  background-color: #fff;
+  background-image: url( $filePath + "07/bg_afterHeader.png" );
+  background-repeat: repeat-x;
+  background-position: 0 0;
+  .widget-title {
+    text-align: center;
+    margin: 40px 0;
+    border-bottom: 2px solid $colorBrownLighten;
+    padding-bottom: 20px;
+    position: relative;
+    // media
+    @media #{$medium-up} {
+      border-bottom-width: 6px;
+    }
+    &:after {
+      position: absolute;
+      left: 20px;
+      bottom: -17px;
+      width: 32px;
+      height: 32px;
+      background-image: url("files/2016/07/img_kiku_brown.png");
+      background-repeat: no-repeat;
+      background-size: 32px auto;
+      content: "";
+      // media
+      @media #{$medium-up} {
+        left: 30px;
+        bottom: -34px;
+        width: 65px;
+        height: 65px;
+        background-size: 65px auto;
+      }
+    }
+    // media
+    @media #{$medium-up} {
+      font-size: rem-calc(32);
+    }
+  }
+}
+/**
+ * sponsor-logo
+ */
+.wcb_widget_sponsors {
+  .sponsor-level {
+    @extend %clearfix;
+    padding: 0 10px;
+    // media
+    @media #{$large-up} {
+      padding: 0 20px;
+    }
+  }
+  .sponsor-level-title {
+    text-align: center;
+    font-size: rem-calc(22);
+    position: relative;
+    padding-bottom: 5px;
+  }
+  .sponsor-logo {
+    margin-bottom: 20px;
+  }
+  .gold,
+  .tokyo-gold {
+    .sponsor-logo {
+      // media
+      @media #{$medium-up} {
+        @include grid-column($columns: 6);
+      }
+    }
+    .sponsor-level-title {
+      border-bottom: 2px solid $colorGold;
+    }
+  }
+  .silver,
+  .tokyo-silver {
+    // media
+    .sponsor-logo {
+      @media #{$medium-up} {
+        @include grid-column($columns: 4);
+      }
+    }
+    .sponsor-level-title {
+      border-bottom: 2px solid $colorSilver;
+    }
+  }
+  .bronze,
+  .tokyo-bronze {
+    // media
+    .sponsor-logo {
+      @media #{$medium-up} {
+        @include grid-column($columns: 3);
+      }
+    }
+    .sponsor-level-title {
+      border-bottom: 2px solid $colorBronze;
+
+    }
+  }
+}

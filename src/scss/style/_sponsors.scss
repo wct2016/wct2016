@@ -6,6 +6,9 @@
   #content {
     background-color: #fff;
     border: 1px solid lighten($colorSilver, 10%);
+    @media #{$small-only} {
+      margin-bottom: 30px;
+    }
   }
   .hentry {
     border: none;

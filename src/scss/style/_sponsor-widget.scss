@@ -18,6 +18,9 @@
   background-image: url( $filePath + "07/bg_afterHeader.png" );
   background-repeat: repeat-x;
   background-position: 0 0;
+  &--micro {
+    background-image: none;
+  }
   .widget-title {
     text-align: center;
     margin: 40px 0;
@@ -34,7 +37,7 @@
       bottom: -17px;
       width: 32px;
       height: 32px;
-      background-image: url("files/2016/07/img_kiku_brown.png");
+      background-image: url( $filePath + "08/img_kiku_brown.png");
       background-repeat: no-repeat;
       background-size: 32px auto;
       content: "";
@@ -109,6 +112,19 @@
     .sponsor-level-title {
       border-bottom: 2px solid $colorBronze;
 
+    }
+  }
+  .micro {
+    .sponsor-level-title {
+      border-bottom: 1px solid $colorSilver;
+      font-weight: normal;
+    }
+    .sponsor-text {
+      display: block;
+      max-width: 200px;
+      margin: 0 auto;
+      margin-bottom: 40px;
+      text-align: center;
     }
   }
 }

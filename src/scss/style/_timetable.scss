@@ -27,8 +27,8 @@ $colorNone        : lighten($colorSilver, 10%);
   margin-bottom: 40px;
   th {
     text-align: center;
-    background-color: $colorBeige;
-    color: darken($colorBrown, 5%);
+    background-color: darken($colorBeige, 2%);
+    color: darken($colorBrown, 10%);
   }
   th,
   td {
@@ -38,8 +38,6 @@ $colorNone        : lighten($colorSilver, 10%);
 }
 .wcpt-col-time {
   text-align: center;
-}
-.wcpt-col-time {
   width: 90px;
 }
 .wcpt-col-track {

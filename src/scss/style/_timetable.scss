@@ -22,308 +22,84 @@ $colorNone        : lighten($colorSilver, 10%);
 }
 /* timetable
 /* ---------------------------------------- */
-
-/* page layout */
-.page-id-2235,
-.page-id-2428,
-.page-id-1488 {
-  #secondary {
-    display: none;
-  }
-  #main,
-  #primary {
-    width: 100%;
-    max-width: 1280px;
-    margin: 0 auto;
-  }
-}
-.gridRow {
-  @include grid-row();
-  &__col2 {
-    @media #{$medium-up} {
-      @include grid-column(
-        $columns: 6,
-        $collapse: false
-      );
-    }
-  }
-}
-/* legend */
-.entry-content {
-  .legend {
-    &__item {
-      margin-left: 0;
-      list-style-type: none;
-      &--inline {
-        padding-right: 10px;
-        float: left;
-      }
-    }
-  }
-}
-/* target icons */
-.iconTarget {
-  color: $colorLink;
-  padding: 1px 2px;
-  border: 1px solid #ffffff;
-  border-radius: 14px;
-  &--beginner {
-    &:before {
-      @include dashicons('\f487', $fontSize: 14px, $valign: middle);
-    }
-  }
-  &--blogger {
-    &:before {
-      @include dashicons('\f540', $fontSize: 14px, $valign: middle);
-    }
-  }
-  &--business {
-    &:before {
-      @include dashicons('\f512', $fontSize: 14px, $valign: middle);
-    }
-  }
-  &--developper {
-    &:before {
-      @include dashicons('\f107', $fontSize: 14px, $valign: middle);
-    }
-  }
-  &--creator {
-    &:before {
-      @include dashicons('\f475', $fontSize: 14px, $valign: middle);
-    }
-  }
-
-}
-/* mentor */
-.mentor {
-  &:before {
-    @include genericon('\f304');
-    font-size: rem-calc(16);
-  }
-}
-/* tags for hands-on */
-.tagTrack {
-  @include tag(4px, #ffffff, $colorLink);
-}
-.tagPrepare {
-  margin: 10px auto;
-  color: $colorLink;
-  font-size: rem-calc(12);
-  font-weight: bold;
-  &:before {
-    @include dashicons('\f111', rem-calc(10));
-  }
-}
-.boxHandson {
-  margin-top: 40px;
-  &__text {
-    font-size: rem-calc(11);
-  }
-}
-.btnHandson {
-  // @include buttonBase($colorLink, rem-calc(11), $fullWidth: true);
-  margin: 6px 0;
-  padding: 0.4rem;
-  box-shadow: none;
-  border-radius: 3px;
-}
-/* timetable */
-.timetable {
-  width: 100%;
-  margin: 0 auto;
-  border: 1px solid $colorNone;
-  table-layout: fixed;
-  &--flex {
-    table-layout: auto;
-  }
+.wcpt-schedule {
+  border: none;
+  margin-bottom: 40px;
   th {
-    &.time {
-      background-color: $colorHead;
-      border-bottom: 2px solid $colorHeadLighten;
-      text-align: center;
-      color: #ffffff;
-      &--day2 {
-        width: 20%;
-      }
-    }
-    &.floor {
-      padding: 0.3rem;
-      background-color: lighten($colorHead, 20%);
-      border-right: 2px solid $colorHeadLighten;
-      color: #ffffff;
-      font-weight: normal;
-      text-align: center;
-      &:last-child {
-        border-right: none;
-      }
-    }
-    &.room {
-      text-align: center;
-      background-color: $colorHead;
-      border-right: 2px solid $colorHeadLighten;
-      border-bottom: 4px solid darken($colorHead, 10%);
-      color: #ffffff;
-      &:last-child {
-        border-right: none;
-      }
-    }
+    text-align: center;
+    background-color: darken($colorBeige, 2%);
+    color: darken($colorBrown, 10%);
   }
+  th,
   td {
-    word-wrap: break-word;
-    &.open,
-    &.break {
-      background-color: #ffffff;
-      color: $colorHead;
-      text-align: center;
-    }
-    .session {
-      margin: 0;
-      dt,
-      dd {
-        margin: 0 0 3px 0;
-      }
-      &__title {
-        background: transparent;
-        font-weight: bold;
-        padding: 0;
-        font-size: rem-calc(13);
-      }
-      &__speaker {
-        font-size: rem-calc(12);
-        &:before {
-          @include genericon('\f304');
-          color: lighten($colorText, 14%);
-          font-size: rem-calc(14);
-        }
-      }
-    }
-    &.cell {
-      padding-top: 0.5rem;
-      border-top: 2px solid #ffffff;
-      border-bottom: 2px solid #ffffff;
-      .lt {
-        font-weight: bold;
-        &--afterParty {
-          display: block;
-          padding: 4px;
-          background-color: #ffffff;
-        }
-      }
-      &--none {
-        background-color: $colorNone;
-      }
-      &--hall {
-        background-color: $colorHall;
-      }
-      &--01 {
-        background-color: $color01;
-      }
-      &--02 {
-        background-color: $color02;
-      }
-      &--02 {
-        background-color: $color02;
-      }
-      &--03 {
-        background-color: $color03;
-      }
-      &--05 {
-        background-color: $color05;
-      }
-      &--06 {
-        background-color: $color06;
-      }
-      &--content {
-        width: 80%;
-        text-align: center;
-        color: $colorHead;
-        border: none;
-      }
-    }
+    padding: 20px;
+    border-right: 1px solid #fff;
   }
 }
-/* media queries */
-@media #{$small-only} {
-  .timetable {
-    th,
-    td {
-      display: block;
-    }
-    th {
-      &.floor,
-      &.room {
-        display: none;
-      }
-      &.room--day2 {
-        display: block;
-      }
-      &.time--day2 {
-        display: block;
-        width: 100%;
-        background-color: lighten($colorHead, 50%);
-        border-bottom: none;
-        color: $colorHead;
-      }
-    }
-    td {
-      .session {
-        &__title {
-          font-size: rem-calc(14);
-        }
-      }
-      &.cell {
-        &:before {
-          display: block;
-          margin-bottom: 4px;
-          color: #ffffff;
-          font-weight: bold;
-          font-size: rem-calc(12);
-        }
-        &--none {
-          display: none;
-        }
-        &--hall {
-          &:before {
-            content: "2F 大ホール";
-            color: darken($colorHall, 55%);
-          }
-        }
-        &--01 {
-          &:before {
-            content: "3F Room1";
-            color: darken($color01, 70%);
-          }
-        }
-        &--02 {
-          &:before {
-            content: "3F Room2";
-            color: darken($color02, 55%);
-          }
-        }
-        &--03 {
-          &:before {
-            content: "3F Room3";
-            color: darken($color03, 55%);
-          }
-        }
-        &--05 {
-          &:before {
-            content: "3F Room5";
-            color: darken($color05, 55%);
-          }
-        }
-        &--06 {
-          &:before {
-            content: "3F Room6";
-            color: darken($color06, 58%);
-          }
-        }
-        &--content {
-          display: block;
-          width: 100%;
-          background-color: #ffffff;
-        }
+.wcpt-col-time {
+  text-align: center;
+  width: 90px;
+}
+.wcpt-col-track {
+  width: 25%;
+}
+.wcpt-session-title {
+  display: block;
+  color: $colorOrange;
+  margin-bottom: 8px;
+}
+.wcpt-session-speakers {
+  display: block;
+  font-size: 90%;
+  &:before {
+    @include fa('\f007', 95%);
+    color: darken($colorSilver, 35%);
+    margin-right: 4px;
+  }
+}
+/**
+ * media
+ */
+@media screen and (max-width: 700px) {
+  .wcpt-schedule {
+    tr {
+      border: 1px solid lighten($colorSilver, 10%);
+      border-radius: 4px;
+      &:nth-of-type(even) {
+        background-color: #fff;
       }
     }
+    td,th {
+      padding: 14px;
+    }
+  }
+  .wcpt-time {
+    font-size: rem-calc(18);
+    color: $colorText;
+    font-weight: bold;
+  }
+  .wcpt-session-title {
+    padding: 0 14px;
+    margin: 8px 0;
+  }
+  span.wcpt-session-speakers {
+    padding: 0 14px;
+    &:before {
+      @include fa('\f007', 95%);
+      color: darken($colorSilver, 35%);
+      margin-right: 4px;
+    }
+  }
+  td[class*="wcb-track-"] {
+    padding: 0;
+    &:before {
+      padding: 14px;
+      background-color: $colorBeige;
+      border: none;
+      color: darken($colorBrown, 5%);
+    }
+  }
+  td.wcpt-session-empty {
+    display: none;
   }
 }

@@ -57,6 +57,11 @@ $colorNone        : lighten($colorSilver, 10%);
     margin-right: 4px;
   }
 }
+.global-session span {
+  text-align: center;
+  color: $colorText;
+  margin-bottom: 0;
+}
 /**
  * media
  */
@@ -101,5 +106,8 @@ $colorNone        : lighten($colorSilver, 10%);
   }
   td.wcpt-session-empty {
     display: none;
+  }
+  .global-session span {
+    margin-bottom: 20px;
   }
 }

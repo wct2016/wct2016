@@ -27,13 +27,13 @@ $colorNone        : lighten($colorSilver, 10%);
   margin-bottom: 40px;
   th {
     text-align: center;
-    background-color: darken($colorBeige, 2%);
-    color: darken($colorBrown, 10%);
+    color: darken($colorBrown, 15%);
   }
   th,
   td {
     padding: 20px;
     border-right: 1px solid #fff;
+    color: darken($colorBrown, 15%);
   }
 }
 .wcpt-col-time {
@@ -53,13 +53,13 @@ $colorNone        : lighten($colorSilver, 10%);
   font-size: 90%;
   &:before {
     @include fa('\f007', 95%);
-    color: darken($colorSilver, 35%);
+    color: lighten($colorBrownLighten, 8%);
     margin-right: 4px;
   }
 }
 .global-session span {
   text-align: center;
-  color: $colorText;
+  color: darken($colorBrown, 15%);
   margin-bottom: 0;
 }
 /**
@@ -99,9 +99,9 @@ $colorNone        : lighten($colorSilver, 10%);
     padding: 0;
     &:before {
       padding: 14px;
-      background-color: $colorBeige;
+      background-color: rgb(249, 249, 249);
       border: none;
-      color: darken($colorBrown, 5%);
+      color: darken($colorBrown, 15%);
     }
   }
   td.wcpt-session-empty {

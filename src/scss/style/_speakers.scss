@@ -144,10 +144,55 @@
     }
   }
 }
-/* WordPress markup */
+
+/* Link to session from speaker */
 .speaker-sessions,
+.session-speakers{
+  clear: both;
+  .entry-content &{
+    font-weight: normal;
+    border-bottom-color: $colorOrange;
+  }
+  &:before{
+    margin-right: 0.25em;
+    font-size: inherit;
+    color: $colorOrange;
+  }
+}
+.speaker-sessions:before{
+  @include fa('\f130');
+}
+.session-speakers:before{
+  @include fa('\f007');
+}
 #speaker-session-names,
-.session-speakers,
-#session-speaker-names {
-  display: none;
+#session-speaker-names{
+  li{
+    margin: 0;
+    border-bottom: 1px solid $colorSilver;
+    &:first-child{
+      border-top: 1px solid $colorSilver;
+    }
+    a{
+      display: block;
+      padding: 0.5em 3em 0.5em 1em;
+      font-size: 1.2em;
+      position: relative;
+      &:after{
+        @include fa("\f054");
+        position: absolute;
+        right: 0.5em;
+        top: 50%;
+        margin-top: -0.75em;
+      }
+      &:link,&:visited{
+        color: $colorBlack;
+        background-color: $colorWhite;
+      }
+      &:hover, &:active{
+        color: $colorBrown;
+        background-color: $colorBeige;
+      }
+    }
+  }
 }

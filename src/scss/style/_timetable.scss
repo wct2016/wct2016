@@ -4,19 +4,22 @@
 $colorHead        : #a07826;
 $colorHeadLighten : lighten($colorHead, 40%);
 $colorHall        : lighten(#1e4b96, 52%); // blue
-$color01          : lighten(#087641, 68%); // green
-$color02          : lighten(#dd5411, 48%); // orange
-$color03          : lighten(#c91138, 48%); // red
-$color05          : lighten(#a9488d, 44%); // purple
-$color06          : lighten(#689dbc, 32%); // lighten blue
-$colorNone        : lighten($colorSilver, 10%);
+$color01          : #38c057; // green
+$color02          : #dd5411; // orange
+$color03          : #c91138; // red
+$color05          : #db5aba; // purple
+$color06          : #689dbc; // lighten blue
+$colorNone        : $colorSilver;
 
-@mixin tag($padding, $bgColor, $color) {
+
+@mixin tag($color) {
   display: inline-block;
-  padding: $padding;
-  font-size: rem-calc(10);
-  border-radius: 3px;
-  background-color: $bgColor;
+  padding: 3px 5px;
+  font-size: 0.85em;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: #fff;
+  border: 2px solid $color;
   color: $color;
   line-height: 1;
 }
@@ -24,7 +27,10 @@ $colorNone        : lighten($colorSilver, 10%);
 /* ---------------------------------------- */
 .wcpt-schedule {
   border: none;
-  margin-bottom: 40px;
+  border-collapse: collapse;
+  .entry-content & {
+    margin-bottom: 40px;
+  }
   th {
     text-align: center;
     color: darken($colorBrown, 15%);
@@ -32,8 +38,74 @@ $colorNone        : lighten($colorSilver, 10%);
   th,
   td {
     padding: 20px;
-    border-right: 1px solid #fff;
     color: darken($colorBrown, 15%);
+    background-color: #fff;
+    border: 1px solid $colorBrown;
+    border-bottom: none;
+    &:first-child{
+      border-left: none;
+      @media screen and (max-width: 700px) {
+        border-left: 1px solid $colorBrown;
+      }
+    }
+    &:last-child{
+      border-right: none;
+      @media screen and (max-width: 700px) {
+        border-right: 1px solid $colorBrown;
+      }
+    }
+    &.wcpt-session-empty{
+      border-top: none;
+    }
+    &.wcpt-session-type-custom{
+      background-color: #f9f9f9;
+      .wcpt-session-title{
+        color: $colorNone;
+      }
+    }
+    &.wcb-session-end-of-session{
+      &:last-child{
+        border-left-color: transparent;
+      }
+      &:nth-child(4){
+        border-right-color: transparent;
+      }
+    }
+    // Make label
+    @each $var in (
+            "10min" $color01 "5分",
+            "20min" $color06 "15分",
+            "40min" $color02 "30分",
+            "80min" $color05 "70分",
+    ){
+      $class_name: nth($var, 1);
+      $color: nth($var, 2);
+      $label: nth($var, 3);
+      &[class*="#{$class_name}"]{
+        &:after{
+          content: $label;
+          @include tag( $color );
+          @media screen and (max-width: 700px) {
+            margin: 0 8px;
+          }
+        }
+      }
+    }
+  }
+  thead{
+    th{
+      border-top: none;
+    }
+  }
+  tbody tr:first-child{
+    th, td{
+      border-top: 3px solid $colorBrown;
+    }
+  }
+  tr:last-child{
+    th, td{
+      border-bottom: 1px solid $colorBrown;
+    }
   }
 }
 .wcpt-col-time {
@@ -57,10 +129,15 @@ $colorNone        : lighten($colorSilver, 10%);
     margin-right: 4px;
   }
 }
-.global-session span {
-  text-align: center;
-  color: darken($colorBrown, 15%);
-  margin-bottom: 0;
+.global-session{
+  td{
+    border-bottom: 1px solid $colorBrown;
+  }
+  span.wcpt-session-title {
+    text-align: center;
+    color: darken($colorBrown, 15%);
+    margin-bottom: 0;
+  }
 }
 /**
  * media
@@ -96,7 +173,8 @@ $colorNone        : lighten($colorSilver, 10%);
     }
   }
   td[class*="wcb-track-"] {
-    padding: 0;
+    padding: 0 0 8px;
+    border-bottom: 1px solid $colorBrown;
     &:before {
       padding: 14px;
       background-color: rgb(249, 249, 249);

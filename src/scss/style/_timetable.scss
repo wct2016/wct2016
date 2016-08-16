@@ -28,14 +28,33 @@ $colorNone        : lighten($colorSilver, 10%);
   th {
     text-align: center;
     color: darken($colorBrown, 15%);
+    background-color: lighten($colorBrown, 40%);
   }
   th,
   td {
     padding: 20px;
-    border-right: 1px solid #fff;
     color: darken($colorBrown, 15%);
   }
+  tr {
+    &:nth-of-type(even) {
+      background-color: #f1f1f1;
+      th, td {
+        border-right: 1px solid #fff;
+      }
+    }
+    &:nth-of-type(odd) {
+      th, td {
+        border-right: 1px solid #f1f1f1;
+      }
+    }
+  }
 }
+// .wcpt-session-empty {
+//   &:before {
+//     content: "-";
+//     color: darken($colorSilver, 8%);
+//   }
+// }
 .wcpt-col-time {
   text-align: center;
   width: 90px;

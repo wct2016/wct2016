@@ -111,6 +111,17 @@
     }
     .sponsor-level-title {
       border-bottom: 2px solid $colorBronze;
+    }
+  }
+  .in-kind {
+    .sponsor-logo {
+      @media #{$medium-up} {
+        @include grid-column($columns: 2);
+      }
+    }
+    .sponsor-level-title {
+      border-bottom: 1px solid $colorSilver;
+      font-weight: normal;
 
     }
   }

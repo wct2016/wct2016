@@ -49,12 +49,12 @@ $colorNone        : lighten($colorSilver, 10%);
     }
   }
 }
-.wcpt-session-empty {
-  &:before {
-    content: "-";
-    color: darken($colorSilver, 8%);
-  }
-}
+// .wcpt-session-empty {
+//   &:before {
+//     content: "-";
+//     color: darken($colorSilver, 8%);
+//   }
+// }
 .wcpt-col-time {
   text-align: center;
   width: 90px;

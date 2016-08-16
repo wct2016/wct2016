@@ -6,6 +6,16 @@
   @include grid-row();
 }
 /**
+ * widgetRegister
+ */
+.widgetRegister {
+  // background-color: #fff;
+  &__inner {
+    @include grid-row();
+    padding: 0 20px 80px 20px;
+  }
+}
+/**
  * widgetSns
  */
 %widgetIconPos {

@@ -53,7 +53,29 @@
 .entry-header {
   padding-top: 10px;
   .entry-meta {
-      display: none;
+    margin: 20px;
+    font-size: 0.85em;
+    display: none;
+    color: $colorText;
+    a:link, a:visited{
+      color: $colorBlack;
+      text-decoration: underline;
+    }
+    a:hover, a:active{
+      color: $colorLink;
+      text-decoration: none;
+    }
+    .entry-date {
+      color: inherit;
+      font-weight: bold;
+    }
+    // only displayed in single-post
+    body.single-post &{
+      display: block;
+    }
+    @media only screen and (max-width: 697px) {
+      margin: 10px;
+    }
   }
   .entry-date {
     color: $colorWhite;
@@ -114,18 +136,6 @@ footer.entry-meta {
   }
   .entry-header {
     position: relative;
-    &:before {
-    position: absolute;
-    right: 30px;
-    bottom: -12px;
-    width: 39px;
-    height: 38px;
-    background-image: url("files/2016/07/img_kiku_orange.png");
-    background-repeat: no-repeat;
-    background-size: 41px auto;
-    background-position: -2px -5px;
-    content: "";
-    }
   }
   .entry-title {
     margin-top: 34px;
@@ -133,6 +143,19 @@ footer.entry-meta {
     padding-bottom: 14px;
     font-size: rem-calc(28);
     line-height: 1.5;
+    position: relative;
+    &:before {
+      position: absolute;
+      right: 30px;
+      bottom: -22px;
+      width: 39px;
+      height: 38px;
+      background-image: url("files/2016/07/img_kiku_orange.png");
+      background-repeat: no-repeat;
+      background-size: 41px auto;
+      background-position: -2px -5px;
+      content: "";
+    }
   }
   .entry-content {
     padding: 0 20px;

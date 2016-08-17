@@ -9,10 +9,26 @@
  * widgetRegister
  */
 .widgetRegister {
-  // background-color: #fff;
+  background-color: #fff;
+  content: "";
+  background-image: url($filePath + "08/bg_register.png");
+  background-position: 20px center;
+  background-repeat: repeat;
+  background-size: cover;
   &__inner {
     @include grid-row();
-    padding: 0 20px 80px 20px;
+    padding: 80px 20px;
+  }
+  &__lead {
+    text-align: center;
+    font-size: rem-calc(24);
+    color: darken($colorBrown, 20%);
+    font-weight: bold;
+    line-height: 1.8;
+    // media
+    @media #{$small-only} {
+      font-size: rem-calc(16);
+    }
   }
 }
 /**

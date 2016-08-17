@@ -114,4 +114,12 @@ html {
     margin-right: 10px;
     font-size: rem-calc(24);
   }
+  @media #{$small-only} {
+    font-size: rem-calc(14);
+    &:after {
+      font-size: rem-calc(18);
+      top: 24px;
+      right: 14px;
+    }
+  }
 }

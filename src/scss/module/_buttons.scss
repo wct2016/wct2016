@@ -60,14 +60,15 @@ html {
 .btn {
   @extend %btnBase;
   @include btnColor($colorOrange);
+  box-shadow: 0px 3px 6px rgba(0,0,0,.3);
 }
 .hollow {
   background-color: transparent;
   color: $colorOrange;
   border: 1px solid $colorOrange;
+  box-shadow: 0px 2px 4px rgba(0,0,0,.2);
   &:hover {
     background-color: $colorOrange;
-    color: #fff;
   }
   &:visited {
     color: $colorOrange;
@@ -86,4 +87,39 @@ html {
 .full {
   width: 100%;
 }
-
+.large {
+  padding: 1.5rem 1.5rem;
+  font-size: 110%;
+}
+.xlarge {
+  @extend .large;
+  font-weight: bold;
+}
+/**
+ * specific
+ */
+.btn-register-footer {
+  position: relative;
+  background: rgba(240,100,19,1);
+  background: linear-gradient(to bottom, rgba(240,100,19,1) 0%, rgba(237,75,30,1) 100%);
+  &:hover {
+    background: rgba(237,75,30,1);
+    background: linear-gradient(to bottom, rgba(237,75,30,1) 0%, rgba(240,100,19,1) 100%);
+  }
+  &:after {
+    @include dashicons('\f344');
+    position: absolute;
+    top: 22px;
+    right: 20px;
+    margin-right: 10px;
+    font-size: rem-calc(24);
+  }
+  @media #{$small-only} {
+    font-size: rem-calc(14);
+    &:after {
+      font-size: rem-calc(18);
+      top: 24px;
+      right: 14px;
+    }
+  }
+}

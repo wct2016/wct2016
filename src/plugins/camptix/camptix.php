@@ -1813,7 +1813,7 @@ class CampTix_Plugin {
 		if ( ! $currency )
 			$currency = array( 'label' => __( 'U.S. Dollar', 'camptix' ), 'format' => '$ %s' );
 
-		$with_currency = sprintf( $currency['format'], number_format( (float) $price, 2 ) );
+		$with_currency = sprintf( $currency['format'], number_format( (float) $price, 0 ) );
 		if ( $nbsp )
 			$with_currency = str_replace( ' ', '&nbsp;', $with_currency );
 

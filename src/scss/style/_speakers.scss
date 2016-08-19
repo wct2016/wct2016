@@ -5,9 +5,12 @@
 .entry-content {
   .speaker-avatar {
     float: left;
-    margin: 0 1em 1em 0;
     .avatar {
+      margin: 0 1em 1em 0;
       border-radius: 50%;
+    }
+    .avatar-default{
+      display: none;
     }
   }
   .wcorg-speaker {

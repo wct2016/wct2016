@@ -58,32 +58,27 @@
     margin: 0;
   }
 }
-// /**
-//  * register
-//  */
-// .widgetRegister {
-//   @include grid-row();
-//   margin-bottom: 10px;
-//   background-color: #ffffff;
-//   &__columns {
-//     @media #{$medium-up} {
-//       @include grid-column($columns: 6, $collapse: false);
-//     }
-//   }
-//   &__title {
-//     margin-top: 20px;
-//     display: inline-block;
-//     padding: 12px 0;
-//     border-top: 4px solid $colorGold;
-//     border-bottom: 4px solid $colorGold;
-//     font-size: rem-calc(20);
-//     line-height: 1;
-//   }
-//   &__text {
-//     margin: 20px 0;
-//     font-size: rem-calc(12);
-//   }
-// }
+/**
+ * after party
+ */
+.widgetAfterparty {
+  &__inner {
+    @include grid-row();
+    padding: 40px 0;
+    text-align: center;
+  }
+  &__title {
+    font-weight: normal;
+    text-align: center;
+    font-size: rem-calc(28);
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  &__subTitle {
+    color: darken($colorSilver, 20%);
+    margin-top: 0;
+  }
+}
 /**
  * featured
  */

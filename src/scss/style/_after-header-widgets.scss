@@ -19,6 +19,7 @@
   &__title {
     font-weight: normal;
     font-size: rem-calc(18);
+    color: darken($colorBrown, 20%);
     @media #{$medium-up} {
       font-size: rem-calc(24);
     }
@@ -76,6 +77,7 @@
     font-size: rem-calc(28);
     margin-top: 0;
     margin-bottom: 10px;
+    color: darken($colorBrown, 20%);
   }
   &__subTitle {
     color: darken($colorSilver, 20%);
@@ -91,7 +93,7 @@
  * featured
  */
 $iconSmall: 50px;
-$iconLarge: 80px;
+$iconLarge: 100px;
 
 %widgetFeaturedRight {
   margin-left: 60px;
@@ -107,7 +109,11 @@ $iconLarge: 80px;
   }
 }
 .widgetFeatured {
-  padding: 40px 0;
+  background-image: url($filePath + "08/bg_register.png");
+  background-position: 20px center;
+  background-repeat: repeat;
+  background-size: cover;
+  padding: 30px 0;
   background-color: #fff;
   @media #{$small-only} {
     margin-bottom: 30px;
@@ -118,7 +124,7 @@ $iconLarge: 80px;
   a {
     display: block;
     padding: 10px;
-    background-color: #fff;
+    // background-color: #fff;
     &.isActive {
       transition: background 0.4s;
       &:hover {
@@ -161,6 +167,7 @@ $iconLarge: 80px;
     font-weight: bold;
     margin-top: 0;
     font-size: rem-calc(18);
+    color: darken($colorBrown, 20%);
     @media #{$small-only} {
       font-size: rem-calc(14);
     }
@@ -237,6 +244,7 @@ $iconLarge: 80px;
       font-size: rem-calc(28);
       text-align: center;
       font-weight: normal;
+      color: darken($colorBrown, 20%);
     }
     ul {
       padding-left: 0;

@@ -64,8 +64,11 @@
 .widgetAfterparty {
   &__inner {
     @include grid-row();
-    padding: 40px 0;
+    padding: 80px 20px 60px 20px;
     text-align: center;
+    @media #{$small-only} {
+      padding: 40px 20px 20px;
+    }
   }
   &__title {
     font-weight: normal;
@@ -77,6 +80,11 @@
   &__subTitle {
     color: darken($colorSilver, 20%);
     margin-top: 0;
+  }
+  &__description {
+    @media #{$small-only} {
+      font-size: rem-calc(14);
+    }
   }
 }
 /**
@@ -219,19 +227,39 @@ $iconLarge: 80px;
 #after-header-widgets {
   .widget_recent_entries {
     @include grid-row();
+    background-color: #fff;
     margin-top: 30px;
     margin-bottom: 30px;
     padding: 30px;
     border: 1px dotted #fff;
     border-radius: 10px;
     .widget-title {
-      font-size: rem-calc(18);
+      font-size: rem-calc(28);
+      text-align: center;
+      font-weight: normal;
     }
     ul {
       padding-left: 0;
       li {
         border-bottom: 1px dashed $colorSilver;
         padding: 8px 0;
+        &:first-child {
+          position: relative;
+          padding-left: 42px;
+          &:before {
+            content: "new";
+            display: inline-block;
+            position: absolute;
+            top: 10px;
+            left: 0;
+            padding: 4px 6px;
+            background-color: $colorOrange;
+            border-radius: 4px;
+            color: #fff;
+            font-size: rem-calc(12);
+            line-height: 1;
+          }
+        }
         a {
           font-size: rem-calc(14);
         }

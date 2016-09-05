@@ -2,7 +2,7 @@
 
 /* camptix
 /* ---------------------------------------- */
-%ticketLabelAge {
+%ticketLabel {
   display: inline-block;
   color: #fff;
   font-weight: normal;
@@ -94,8 +94,48 @@
         border-bottom: 28px solid #fff;
         background-color: transparent;
       }
-      &.tix-ticket-1289 {
+    }
+  }
+}
+.tix-order-summary,
+.tix-attendee-form {
+  tbody {
+    tr {
+      &:nth-of-type(odd) {
+        background-color: #f5f5f5;
       }
+      &:nth-of-type(even) {
+        background-color: #fff;
+      }
+    }
+  }
+  .tix-required {
+    &:after {
+      @extend %ticketLabel;
+    }
+  }
+  .tix-required-star {
+    display: none;
+  }
+}
+.tix-row-first-name {
+  .tix-required {
+    &:after {
+      content: '必須 / Required: first-name';
+    }
+  }
+}
+.tix-row-last-name {
+  .tix-required {
+    &:after {
+      content: '必須 / Required: last-name';
+    }
+  }
+}
+.tix-row-email {
+  .tix-required {
+    &:after {
+      content: '必須 / Required: email';
     }
   }
 }
@@ -130,7 +170,7 @@
 .tix-ticket-603 {
   .tix-ticket-title {
     &:after {
-      @extend %ticketLabelAge;
+      @extend %ticketLabel;
       content: "一般";
     }
   }
@@ -139,7 +179,7 @@
 .tix-ticket-1289 {
   .tix-ticket-title {
     &:after {
-      @extend %ticketLabelAge;
+      @extend %ticketLabel;
       content: "18歳未満";
     }
   }

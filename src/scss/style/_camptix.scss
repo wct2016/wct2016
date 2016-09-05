@@ -87,10 +87,8 @@
     tr {
       &:nth-of-type(odd) {
         border-bottom: 10px solid #fff;
-        // border-bottom: 4px solid #fff;
       }
       &:nth-of-type(even) {
-        // border-bottom: 28px solid #fff;
         border-bottom: 28px solid #fff;
         background-color: transparent;
       }
@@ -147,10 +145,20 @@
 }
 .tix-ticket-title {
   display: block;
-  color: darken($colorBrown, 20%);
-  .tix-ticket-641 &,
-  .tix-ticket-642 &, {
-    color: darken(#f9fef4, 75%);
+  .tix-ticket-541 &,
+  .tix-ticket-603 &,
+  .tix-ticket-617 &, {
+    color: darken($colorRed, 20%);
+  }
+  .tix-ticket-1289 &,
+  .tix-ticket-2288 & {
+    color: darken($colorBrown, 20%);
+  }
+  .tix-ticket-641 & {
+    color: darken(#f9fef4, 78%);
+  }
+  .tix-ticket-642 & {
+    color: darken(#c9d9f4, 70%);
   }
 }
 .tix-ticket-excerpt {
@@ -161,7 +169,10 @@
 // day 1 ticket
 .tix-ticket-541,
 .tix-ticket-603,
-.tix-ticket-617,
+.tix-ticket-617 {
+  background-color: lighten($colorRed, 56%) !important;
+  border-left: 4px solid lighten($colorRed, 51%);
+}
 .tix-ticket-2288,
 .tix-ticket-1289 {
   background-color: darken($colorBeige, 2%) !important;
@@ -186,15 +197,16 @@
     }
   }
 }
-// day 2 ticket
-.tix-ticket-641,
-.tix-ticket-642 {
+.tix-ticket-641 {
   background-color: darken(#f9fef4, 2%) !important;
-  border-left: 4px solid darken(#f9fef4, 14%);
+  border-left: 4px solid darken(#f9fef4, 18%);
+}
+.tix-ticket-642 {
+  background-color: lighten(#c9d9f4, 9%) !important;
+  border-left: 4px solid darken(#c9d9f4, 8%);
 }
 // session icon
 .tix-ticket-541,
-.tix-ticket-617,
 .tix-ticket-2288 {
   .tix-column-description {
     padding-left: 36px;
@@ -205,13 +217,26 @@
       top: 19px;
       left: 10px;
       font-size: 20px;
-      color: darken($colorBeige, 32%);
+    }
+  }
+}
+.tix-ticket-541 {
+  .tix-column-description {
+    &:before {
+      color: lighten($colorRed, 40%);
+    }
+  }
+}
+.tix-ticket-2288 {
+  .tix-column-description {
+    &:before {
+      color: darken($colorBeige, 22%);
     }
   }
 }
 // after party icon
 .tix-ticket-603,
-.tix-ticket-1289, {
+.tix-ticket-1289 {
   .tix-column-description {
     padding-left: 36px;
     position: relative;
@@ -221,12 +246,26 @@
       top: 20px;
       left: 10px;
       font-size: 18px;
-      color: darken($colorBeige, 32%);
+    }
+  }
+}
+.tix-ticket-603 {
+  .tix-column-description {
+    &:before {
+      color: lighten($colorRed, 40%);
+    }
+  }
+}
+.tix-ticket-1289 {
+  .tix-column-description {
+    &:before {
+      color: darken($colorBeige, 22%);
     }
   }
 }
 // contributor-day icon
 .tix-ticket-641 {
+  border-bottom: 28px solid #fff !important;
   .tix-column-description {
     padding-left: 36px;
     position: relative;
@@ -251,7 +290,8 @@
       top: 18px;
       left: 10px;
       font-size: 22px;
-      color: darken(#f9fef4, 52%);
+      // color: darken(#f9fef4, 52%);
+      color: darken(#c9d9f4, 14%);
     }
   }
 }

@@ -161,13 +161,15 @@
 // day 1 ticket
 .tix-ticket-541,
 .tix-ticket-603,
+.tix-ticket-617,
 .tix-ticket-2288,
 .tix-ticket-1289 {
   background-color: darken($colorBeige, 2%) !important;
   border-left: 4px solid darken($colorBeige, 10%);
 }
 .tix-ticket-541,
-.tix-ticket-603 {
+.tix-ticket-603,
+.tix-ticket-617, {
   .tix-ticket-title {
     &:after {
       @extend %ticketLabel;
@@ -192,6 +194,7 @@
 }
 // session icon
 .tix-ticket-541,
+.tix-ticket-617,
 .tix-ticket-2288 {
   .tix-column-description {
     padding-left: 36px;

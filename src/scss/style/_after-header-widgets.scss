@@ -42,15 +42,14 @@
  * english
  */
 .widgetEn {
-  display: none;
   position: absolute;
   top: -108px;
   width: 100%;
   height: $navHeight;
   text-align: center;
-  background: rgba(0,0,0,.6);
+  background-color: lighten($colorBrown, 4%);
   @media #{$medium-up} {
-    top: -128px;
+    display: none;
   }
   a {
     display: block;

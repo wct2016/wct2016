@@ -42,12 +42,13 @@
  * english
  */
 .widgetEn {
+  display: none;
   position: absolute;
   top: -108px;
   width: 100%;
   height: $navHeight;
   text-align: center;
-  background: rgba(0,0,0,.5);
+  background: rgba(0,0,0,.6);
   @media #{$medium-up} {
     top: -128px;
   }
@@ -57,6 +58,10 @@
     width: 100%;
     color: #fff;
     margin: 0;
+    &:before {
+      @include fa('\f0ac');
+      margin-right: 5px;
+    }
   }
 }
 /**

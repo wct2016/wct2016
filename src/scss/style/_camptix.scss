@@ -75,6 +75,8 @@
 }
 .tix_tickets_table {
   border: none;
+  border-collapse: separate;
+  border-spacing: 0 18px;
   thead {
     tr {
       background-color: darken($colorBrown, 10%);
@@ -85,140 +87,58 @@
   }
   tbody {
     tr {
-      &:nth-of-type(odd) {
-        border-bottom: 10px solid #fff;
-      }
       &:nth-of-type(even) {
-        border-bottom: 28px solid #fff;
         background-color: transparent;
       }
     }
   }
 }
-.tix-order-summary,
-.tix-attendee-form {
-  tbody {
-    tr {
-      &:nth-of-type(odd) {
-        background-color: #f5f5f5;
-      }
-      &:nth-of-type(even) {
-        background-color: #fff;
-      }
-    }
-  }
-  .tix-required {
-    &:after {
-      @extend %ticketLabel;
-    }
-  }
-  .tix-required-star {
-    display: none;
-  }
-}
-.tix-row-first-name {
-  .tix-required {
-    &:after {
-      content: '必須 / Required: first-name';
-    }
-  }
-}
-.tix-row-last-name {
-  .tix-required {
-    &:after {
-      content: '必須 / Required: last-name';
-    }
-  }
-}
-.tix-row-email {
-  .tix-required {
-    &:after {
-      content: '必須 / Required: email';
-    }
-  }
-}
 .tix-column-description {
   padding: 20px 10px;
+  padding-left: 36px;
+  position: relative;
+  &:before {
+    position: absolute;
+  }
   @media #{$medium-up} {
     width: 70%;
   }
 }
 .tix-ticket-title {
   display: block;
-  .tix-ticket-541 &,
-  .tix-ticket-603 & {
-    color: darken($colorRed, 10%);
-  }
-  .tix-ticket-617 &,
-  .tix-ticket-1289 &,
-  .tix-ticket-2288 & {
-    color: darken($colorBrown, 20%);
-  }
-  .tix-ticket-641 & {
-    color: darken(#f9fef4, 78%);
-  }
-  .tix-ticket-642 & {
-    color: darken(#c9d9f4, 70%);
-  }
 }
 .tix-ticket-excerpt {
   display: block;
   font-size: rem-calc(13);
   color: #777;
 }
-// day 1 ticket
-.tix-ticket-541,
-.tix-ticket-603,
-.tix-ticket-617 {
-  background-color: lighten($colorRed, 56%) !important;
-  border-left: 4px solid lighten($colorRed, 51%);
-}
-.tix-ticket-617,
-.tix-ticket-2288,
-.tix-ticket-1289 {
-  background-color: darken($colorBeige, 2%) !important;
-  border-left: 4px solid darken($colorBeige, 10%);
-}
+//
+// day 1 general
+//
 .tix-ticket-541,
 .tix-ticket-603 {
+  background-color: lighten($colorRed, 56%) !important;
   .tix-ticket-title {
+    color: darken($colorRed, 10%);
     &:after {
       @extend %ticketLabel;
       content: "一般";
     }
   }
 }
-.tix-ticket-617,
-.tix-ticket-2288,
-.tix-ticket-1289 {
-  .tix-ticket-title {
-    &:after {
-      @extend %ticketLabel;
-      content: "18歳未満";
-    }
-  }
-}
-.tix-ticket-641 {
-  background-color: darken(#f9fef4, 2%) !important;
-  border-left: 4px solid darken(#f9fef4, 18%);
-}
-.tix-ticket-642 {
-  background-color: lighten(#c9d9f4, 9%) !important;
-  border-left: 4px solid darken(#c9d9f4, 8%);
-}
 // session icon
 .tix-ticket-541,
 .tix-ticket-617,
 .tix-ticket-2288 {
   .tix-column-description {
-    padding-left: 36px;
-    position: relative;
     &:before {
       @include dashicons('\f489');
-      position: absolute;
-      top: 19px;
+      top: 0;
       left: 10px;
       font-size: 20px;
+      width: 20px;
+      height: 20px;
+      padding: 20px 0 0 0;
     }
   }
 }
@@ -237,65 +157,100 @@
     }
   }
 }
+//
+// day 1 U18
+//
+.tix-ticket-617,
+.tix-ticket-2288,
+.tix-ticket-1289 {
+  background-color: darken($colorBeige, 2%) !important;
+  .tix-ticket-title {
+    color: darken($colorBrown, 20%);
+    &:after {
+      @extend %ticketLabel;
+      content: "18歳未満";
+    }
+  }
+}
 // after party icon
 .tix-ticket-603,
 .tix-ticket-1289 {
   .tix-column-description {
-    padding-left: 36px;
-    position: relative;
     &:before {
       @include fa('\f000');
-      position: absolute;
-      top: 20px;
+      top: 0;
       left: 10px;
       font-size: 18px;
+      width: 18px;
+      height: 18px;
+      padding: 20px 0 0 0;
     }
   }
 }
+.tix-ticket-541,
 .tix-ticket-603 {
   .tix-column-description {
     &:before {
-      color: lighten($colorRed, 40%);
+      color: lighten($colorRed, 35%);
     }
   }
 }
+.tix-ticket-2288,
 .tix-ticket-1289,
 .tix-ticket-617 {
   .tix-column-description {
     &:before {
-      color: darken($colorBeige, 22%);
+      color: darken($colorBeige, 36%);
     }
+  }
+}
+//
+// day 2 contributor
+//
+.tix-ticket-641 {
+  background-color: darken(#f9fef4, 2%) !important;
+  .tix-ticket-title {
+    color: darken(#f9fef4, 78%);
+  }
+}
+//
+// day 2 hackathon
+//
+.tix-ticket-642 {
+  background-color: lighten(#c9d9f4, 9%) !important;
+  border-left: 4px solid darken(#c9d9f4, 8%);
+  .tix-ticket-title {
+    color: darken(#c9d9f4, 70%);
   }
 }
 // contributor-day icon
 .tix-ticket-641 {
   border-bottom: 28px solid #fff !important;
   .tix-column-description {
-    padding-left: 36px;
-    position: relative;
     &:before {
       @include dashicons('\f120');
-      position: absolute;
-      top: 20px;
+      top: 0;
       left: 10px;
       font-size: 20px;
-      color: darken(#f9fef4, 52%);
+      color: darken(#f9fef4, 56%);
+      width: 20px;
+      height: 20px;
+      padding: 20px 0 0 0;
     }
   }
 }
 // hackathon icon
 .tix-ticket-642 {
   .tix-column-description {
-    padding-left: 36px;
-    position: relative;
     &:before {
       @include dashicons('\f307');
-      position: absolute;
-      top: 18px;
+      top: 0;
       left: 10px;
       font-size: 22px;
-      // color: darken(#f9fef4, 52%);
-      color: darken(#c9d9f4, 14%);
+      width: 22px;
+      height: 22px;
+      color: darken(#c9d9f4, 17%);
+      padding: 18px 0 0 0;
     }
   }
 }
@@ -356,6 +311,51 @@
     td {
       display: block;
       width: 100%;
+    }
+  }
+}
+//
+// register form
+//
+.tix-order-summary,
+.tix-attendee-form {
+  tbody {
+    tr {
+      &:nth-of-type(odd) {
+        background-color: #f5f5f5;
+      }
+      &:nth-of-type(even) {
+        background-color: #fff;
+      }
+    }
+  }
+  .tix-required {
+    &:after {
+      @extend %ticketLabel;
+    }
+  }
+  .tix-required-star {
+    display: none;
+  }
+}
+.tix-row-first-name {
+  .tix-required {
+    &:after {
+      content: '必須 / Required: first-name';
+    }
+  }
+}
+.tix-row-last-name {
+  .tix-required {
+    &:after {
+      content: '必須 / Required: last-name';
+    }
+  }
+}
+.tix-row-email {
+  .tix-required {
+    &:after {
+      content: '必須 / Required: email';
     }
   }
 }

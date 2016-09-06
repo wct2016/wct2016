@@ -146,10 +146,10 @@
 .tix-ticket-title {
   display: block;
   .tix-ticket-541 &,
-  .tix-ticket-603 &,
-  .tix-ticket-617 &, {
+  .tix-ticket-603 & {
     color: darken($colorRed, 10%);
   }
+  .tix-ticket-617 &,
   .tix-ticket-1289 &,
   .tix-ticket-2288 & {
     color: darken($colorBrown, 20%);
@@ -173,14 +173,14 @@
   background-color: lighten($colorRed, 56%) !important;
   border-left: 4px solid lighten($colorRed, 51%);
 }
+.tix-ticket-617,
 .tix-ticket-2288,
 .tix-ticket-1289 {
   background-color: darken($colorBeige, 2%) !important;
   border-left: 4px solid darken($colorBeige, 10%);
 }
 .tix-ticket-541,
-.tix-ticket-603,
-.tix-ticket-617, {
+.tix-ticket-603 {
   .tix-ticket-title {
     &:after {
       @extend %ticketLabel;
@@ -188,6 +188,7 @@
     }
   }
 }
+.tix-ticket-617,
 .tix-ticket-2288,
 .tix-ticket-1289 {
   .tix-ticket-title {
@@ -207,6 +208,7 @@
 }
 // session icon
 .tix-ticket-541,
+.tix-ticket-617,
 .tix-ticket-2288 {
   .tix-column-description {
     padding-left: 36px;
@@ -227,6 +229,7 @@
     }
   }
 }
+.tix-ticket-617,
 .tix-ticket-2288 {
   .tix-column-description {
     &:before {
@@ -256,7 +259,8 @@
     }
   }
 }
-.tix-ticket-1289 {
+.tix-ticket-1289,
+.tix-ticket-617 {
   .tix-column-description {
     &:before {
       color: darken($colorBeige, 22%);

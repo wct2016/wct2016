@@ -341,21 +341,28 @@
 .tix-row-first-name {
   .tix-required {
     &:after {
-      content: '必須 / Required: first-name';
+      content: '必須 / Required: First-Name';
     }
   }
 }
 .tix-row-last-name {
   .tix-required {
     &:after {
-      content: '必須 / Required: last-name';
+      content: '必須 / Required: Last-Name';
     }
   }
 }
 .tix-row-email {
   .tix-required {
     &:after {
-      content: '必須 / Required: email';
+      content: '必須 / Required: Email';
+    }
+  }
+}
+.tix-row-question-547 {
+  .tix-required {
+    &:after {
+      content: '必須 / Required: Age';
     }
   }
 }

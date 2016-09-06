@@ -2,6 +2,18 @@
 
 /* camptix
 /* ---------------------------------------- */
+%ticketLabel {
+  display: inline-block;
+  color: #fff;
+  font-weight: normal;
+  background-color: darken(#fdede6, 30%);
+  padding: 3px 5px;
+  font-size: 86%;
+  border-radius: 4px;
+  margin-left: 4px;
+  line-height: 1;
+}
+
 #tix {
   padding-top: 0;
   body.admin-bar & {
@@ -16,6 +28,13 @@
     @media #{$small-only} {
       width: 100%;
     }
+  }
+  select {
+    background-color: #fff;
+    background-image: none;
+  }
+  #tix-coupon-input {
+    margin-bottom: 10px;
   }
 }
 .tix-section {
@@ -55,37 +74,185 @@
   }
 }
 .tix_tickets_table {
+  border: none;
+  border-collapse: separate;
+  border-spacing: 0 18px;
   thead {
-    background-color: darken($colorMedia, 20%);
+    tr {
+      background-color: darken($colorBrown, 10%);
+    }
     th {
       color: #fff;
     }
   }
   tbody {
     tr {
-      &:nth-of-type(odd) {
-        background-color: #fff;
-      }
       &:nth-of-type(even) {
-        background-color: lighten($colorMedia, 26%);
+        background-color: transparent;
       }
     }
   }
 }
 .tix-column-description {
   padding: 20px 10px;
+  padding-left: 36px;
+  position: relative;
+  &:before {
+    position: absolute;
+  }
   @media #{$medium-up} {
     width: 70%;
   }
 }
 .tix-ticket-title {
   display: block;
-  color: darken($colorMedia, 40%);
 }
 .tix-ticket-excerpt {
   display: block;
   font-size: rem-calc(13);
-  color: #555;
+  color: #777;
+}
+//
+// day 1 general
+//
+.tix-ticket-541,
+.tix-ticket-603 {
+  background-color: lighten($colorRed, 56%) !important;
+  .tix-ticket-title {
+    color: darken($colorRed, 10%);
+    &:after {
+      @extend %ticketLabel;
+      content: "一般";
+    }
+  }
+}
+// session icon
+.tix-ticket-541,
+.tix-ticket-617,
+.tix-ticket-2288 {
+  .tix-column-description {
+    &:before {
+      @include dashicons('\f489');
+      top: 0;
+      left: 10px;
+      font-size: 20px;
+      width: 20px;
+      height: 20px;
+      padding: 20px 0 0 0;
+    }
+  }
+}
+.tix-ticket-541 {
+  .tix-column-description {
+    &:before {
+      color: lighten($colorRed, 40%);
+    }
+  }
+}
+.tix-ticket-617,
+.tix-ticket-2288 {
+  .tix-column-description {
+    &:before {
+      color: darken($colorBeige, 22%);
+    }
+  }
+}
+//
+// day 1 U18
+//
+.tix-ticket-617,
+.tix-ticket-2288,
+.tix-ticket-1289 {
+  background-color: darken($colorBeige, 2%) !important;
+  .tix-ticket-title {
+    color: darken($colorBrown, 20%);
+    &:after {
+      @extend %ticketLabel;
+      content: "18歳未満";
+    }
+  }
+}
+// after party icon
+.tix-ticket-603,
+.tix-ticket-1289 {
+  .tix-column-description {
+    &:before {
+      @include fa('\f000');
+      top: 0;
+      left: 10px;
+      font-size: 18px;
+      width: 18px;
+      height: 18px;
+      padding: 20px 0 0 0;
+    }
+  }
+}
+.tix-ticket-541,
+.tix-ticket-603 {
+  .tix-column-description {
+    &:before {
+      color: lighten($colorRed, 35%);
+    }
+  }
+}
+.tix-ticket-2288,
+.tix-ticket-1289,
+.tix-ticket-617 {
+  .tix-column-description {
+    &:before {
+      color: darken($colorBeige, 36%);
+    }
+  }
+}
+//
+// day 2 contributor
+//
+.tix-ticket-641 {
+  background-color: darken(#f9fef4, 2%) !important;
+  .tix-ticket-title {
+    color: darken(#f9fef4, 78%);
+  }
+}
+//
+// day 2 hackathon
+//
+.tix-ticket-642 {
+  background-color: lighten(#c9d9f4, 9%) !important;
+  border-left: 4px solid darken(#c9d9f4, 8%);
+  .tix-ticket-title {
+    color: darken(#c9d9f4, 70%);
+  }
+}
+// contributor-day icon
+.tix-ticket-641 {
+  border-bottom: 28px solid #fff !important;
+  .tix-column-description {
+    &:before {
+      @include dashicons('\f120');
+      top: 0;
+      left: 10px;
+      font-size: 20px;
+      color: darken(#f9fef4, 56%);
+      width: 20px;
+      height: 20px;
+      padding: 20px 0 0 0;
+    }
+  }
+}
+// hackathon icon
+.tix-ticket-642 {
+  .tix-column-description {
+    &:before {
+      @include dashicons('\f307');
+      top: 0;
+      left: 10px;
+      font-size: 22px;
+      width: 22px;
+      height: 22px;
+      color: darken(#c9d9f4, 17%);
+      padding: 18px 0 0 0;
+    }
+  }
 }
 @media #{$small-only} {
   .tix_tickets_table {
@@ -144,6 +311,51 @@
     td {
       display: block;
       width: 100%;
+    }
+  }
+}
+//
+// register form
+//
+.tix-order-summary,
+.tix-attendee-form {
+  tbody {
+    tr {
+      &:nth-of-type(odd) {
+        background-color: #f5f5f5;
+      }
+      &:nth-of-type(even) {
+        background-color: #fff;
+      }
+    }
+  }
+  .tix-required {
+    &:after {
+      @extend %ticketLabel;
+    }
+  }
+  .tix-required-star {
+    display: none;
+  }
+}
+.tix-row-first-name {
+  .tix-required {
+    &:after {
+      content: '必須 / Required: first-name';
+    }
+  }
+}
+.tix-row-last-name {
+  .tix-required {
+    &:after {
+      content: '必須 / Required: last-name';
+    }
+  }
+}
+.tix-row-email {
+  .tix-required {
+    &:after {
+      content: '必須 / Required: email';
     }
   }
 }

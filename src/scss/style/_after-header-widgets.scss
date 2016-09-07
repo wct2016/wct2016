@@ -113,12 +113,8 @@ $iconLarge: 100px;
   }
 }
 .widgetFeatured {
-  background-image: url($filePath + "08/bg_register.png");
-  background-position: 20px center;
-  background-repeat: repeat;
-  background-size: cover;
-  padding: 30px 0;
-  background-color: #fff;
+  padding: 80px 0 30px 0;
+  background-color: lighten($colorOrange, 4%);
   @media #{$small-only} {
     margin-bottom: 30px;
   }
@@ -128,18 +124,13 @@ $iconLarge: 100px;
   a {
     display: block;
     padding: 10px;
-    // background-color: #fff;
+    color: #fff;
     &.isActive {
       transition: background 0.4s;
       &:hover {
         background-color: $colorOrange;
         .dashicons {
           animation: spin 0.3s linear;
-          color: #ffffff;
-        }
-        .widgetFeatured__title,
-        .widgetFeatured__text {
-          color: #ffffff;
         }
       }
     }
@@ -156,7 +147,7 @@ $iconLarge: 100px;
     font-size: $iconSmall;
     width: 0;
     height: 0;
-    color: $colorOrange;
+    color: #fff;
     text-shadow: 1px 1px 1px rgba(0,0,0,.3);
   }
   &__columns {
@@ -170,8 +161,9 @@ $iconLarge: 100px;
     @extend %widgetFeaturedRight;
     font-weight: bold;
     margin-top: 0;
+    margin-bottom: 10px;
     font-size: rem-calc(18);
-    color: darken($colorBrown, 20%);
+    color: #fff;
     @media #{$small-only} {
       font-size: rem-calc(14);
     }
@@ -179,14 +171,14 @@ $iconLarge: 100px;
   &__text {
     @extend %widgetFeaturedRight;
     font-size: rem-calc(13);
-    color: darken($colorSilver, 20%);
+    color: #fff;
   }
   &__label {
     margin-right: 5px;
     padding: 2px 4px;
-    background-color: $colorOrange;
+    background-color: #fff;
     border-radius: 3px;
-    color: #ffffff;
+    color: $colorOrange;
     font-size: rem-calc(13);
   }
 }
@@ -201,7 +193,6 @@ $iconLarge: 100px;
       margin: 0 auto 10px auto;
       width: $iconLarge;
       height: auto;
-      color: $colorOrange;
       font-size: $iconLarge;
     }
     &__columns {
@@ -235,19 +226,25 @@ $iconLarge: 100px;
 /**
  * Recent Posts on After Header Widgets
  */
+.home {
+  #after-header-widgets {
+    .widget_recent_entries {
+      top: -90px;
+    }
+  }
+}
 #after-header-widgets {
   .widget_recent_entries {
     width: 100%;
-    max-width: 700px;
+    max-width: 930px;
     position: absolute;
-    top: -300px;
+    top: -200px;
     left: 0;
     right: 0;
     background-color: #fff;
     margin: 30px auto;
     padding: 20px;
-    border: 1px dotted #fff;
-    border-radius: 10px;
+    border: 4px solid darken($colorBeige, 12%);
     .widget-title {
       margin-top: 0;
       margin-bottom: 10px;

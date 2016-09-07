@@ -116,7 +116,6 @@ html {
   width: 280px;
   padding: 1.3rem;
   position: absolute;
-  top: -170px;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -127,6 +126,15 @@ html {
     @include dashicons('\f524');
     font-size: 18px;
     margin-right: 5px;
+  }
+  @media #{$medium-up} {
+    top: -130px;
+  }
+  @media #{$large-up} {
+    top: -160px;
+  }
+  @media #{$small-only} {
+    top: -210px;
   }
 }
 .btn-register-footer {

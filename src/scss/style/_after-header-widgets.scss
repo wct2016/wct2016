@@ -43,11 +43,14 @@
  */
 .widgetEn {
   position: absolute;
-  top: -108px;
+  top: -70px;
   width: 100%;
   height: $navHeight;
   text-align: center;
   background-color: lighten($colorBrown, 4%);
+  .home & {
+    top: -108px;
+  }
   @media #{$medium-up} {
     display: none;
   }
@@ -69,7 +72,7 @@
 .widgetAfterparty {
   &__inner {
     @include grid-row();
-    padding: 80px 20px 60px 20px;
+    padding: 60px 20px 20px 20px;
     text-align: center;
     @media #{$small-only} {
       padding: 40px 20px 20px;
@@ -230,6 +233,13 @@ $iconLarge: 100px;
   #after-header-widgets {
     .widget_recent_entries {
       top: -90px;
+      border: 4px solid darken($colorBeige, 12%);
+      @media #{$medium-up} {
+        top: -70px;
+      }
+      @media #{$large-up} {
+        top: -100px;
+      }
     }
   }
 }
@@ -238,13 +248,18 @@ $iconLarge: 100px;
     width: 100%;
     max-width: 930px;
     position: absolute;
-    top: -200px;
+    top: -240px;
     left: 0;
     right: 0;
     background-color: #fff;
     margin: 30px auto;
     padding: 20px;
-    border: 4px solid darken($colorBeige, 12%);
+    @media #{$medium-up} {
+      top: -150px;
+    }
+    @media #{$large-up} {
+      top: -150px;
+    }
     .widget-title {
       margin-top: 0;
       margin-bottom: 10px;

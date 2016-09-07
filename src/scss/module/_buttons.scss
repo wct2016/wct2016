@@ -13,6 +13,14 @@
   font-size: rem-calc(16);
   line-height: 1.3;
 }
+%gradient {
+  background: rgba(240,100,19,1);
+  background: linear-gradient(to bottom, rgba(240,100,19,1) 0%, rgba(237,75,30,1) 100%);
+  &:hover {
+    background: rgba(237,75,30,1);
+    background: linear-gradient(to bottom, rgba(237,75,30,1) 0%, rgba(240,100,19,1) 100%);
+  }
+}
 // mixin
 @mixin btnColor($bgColor, $color: #fff) {
   background-color: $bgColor;
@@ -98,14 +106,40 @@ html {
 /**
  * specific
  */
-.btn-register-footer {
-  position: relative;
-  background: rgba(240,100,19,1);
-  background: linear-gradient(to bottom, rgba(240,100,19,1) 0%, rgba(237,75,30,1) 100%);
+.btn-register-top {
+  background: rgba(237,75,30,1);
+  background: linear-gradient(to bottom, #12e03e 0%, #10c837 100%);
   &:hover {
-    background: rgba(237,75,30,1);
-    background: linear-gradient(to bottom, rgba(237,75,30,1) 0%, rgba(240,100,19,1) 100%);
+    background: #12e03e;
+    background: linear-gradient(to bottom, #10c837 0%, #12e03e);
   }
+  width: 280px;
+  padding: 1.3rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 0 1px 2px #0a8124;
+  &:before {
+    @include dashicons('\f524');
+    font-size: 18px;
+    margin-right: 5px;
+  }
+  @media #{$medium-up} {
+    top: -130px;
+  }
+  @media #{$large-up} {
+    top: -160px;
+  }
+  @media #{$small-only} {
+    top: -210px;
+  }
+}
+.btn-register-footer {
+  @extend %gradient;
+  position: relative;
   &:after {
     @include dashicons('\f344');
     position: absolute;

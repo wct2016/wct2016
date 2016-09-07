@@ -4,9 +4,13 @@
 /* ---------------------------------------- */
 
 #masthead {
-  margin-bottom: 60px;
+  margin-bottom: 20px;
+  border-bottom: 4px solid darken($colorBeige, 12%);
   @media #{$medium-up} {
-    margin-bottom: 80px;
+    margin-bottom: 40px;
+  }
+  .home & {
+    margin-bottom: 0;
   }
 }
 /**
@@ -66,10 +70,23 @@
  */
 .site-title {
   margin: 0 auto;
-  padding: 80px 0;
+  padding: 80px 0 50px 0;
   @media #{$medium-up} {
-    padding: 130px 0;
-    margin: 0 auto;
+    padding: 90px 0 30px 0;
+  }
+  @media #{$large-up} {
+    padding: 110px 0 50px 0;
+  }
+  .home & {
+    @media #{$small-only} {
+      padding: 80px 0 200px 0;
+    }
+    @media #{$medium-up} {
+      padding: 100px 0 90px 0;
+    }
+    @media #{$large-up} {
+      padding: 120px 0 150px 0;
+    }
   }
   a {
     @include imageReplace('07/img_title.png', 100%, vmin-calc(167px), $position: 0 10px);
@@ -78,13 +95,13 @@
     margin: 0 auto;
     color: transparent;
     @media #{$medium-up} {
-      max-width: 600px;
+      max-width: 500px;
       padding-top: 293px;
-      // height: 293px;
     }
     @media #{$large-up} {
-      max-width: 800px;
-      height: 393px;
+      max-width: 650px;
+      height: 350px;
+      padding-top: 302px;
     }
   }
 }

@@ -47,9 +47,9 @@
   width: 100%;
   height: $navHeight;
   text-align: center;
-  background: rgba(0,0,0,.5);
+  background-color: lighten($colorBrown, 4%);
   @media #{$medium-up} {
-    top: -128px;
+    display: none;
   }
   a {
     display: block;
@@ -57,6 +57,10 @@
     width: 100%;
     color: #fff;
     margin: 0;
+    &:before {
+      @include fa('\f0ac');
+      margin-right: 5px;
+    }
   }
 }
 /**

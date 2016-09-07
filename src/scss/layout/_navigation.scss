@@ -33,7 +33,7 @@
 }
 .main-navigation {
   @extend %navBase;
-  background-color: lighten($colorBrown, 5%);
+  background-color: lighten($colorBrown, 4%);
   ul {
     a {
       color: #fff;
@@ -42,12 +42,16 @@
 }
 .main-small-navigation {
   @extend %navBase;
-  background-color: lighten($colorBrown, 5%);
+  background-color: lighten($colorBrown, 4%);
 }
 .menu {
   display: none;
   margin: 0 10px;
   padding-left: 0;
+  position: relative;
+  @media #{$large-up} {
+    padding-right: 120px;
+  }
   a {
     display: block;
     padding: $navPadding;
@@ -63,6 +67,29 @@
     &:first-child {
       border-top: none;
     }
+    // English menu item
+    &:last-child {
+      >a {
+        &:before {
+          @include fa('\f0ac');
+          margin-right: 5px;
+        }
+      }
+      @media #{$medium-up} {
+        background-color: darken($colorBrown, 20%);
+        font-weight: bold;
+        .sub-menu {
+          right: 0;
+        }
+      }
+      @media #{$large-up} {
+        &:last-child {
+          position: absolute;
+          top: 0;
+          right: 30px;
+        }
+      }
+    }
   }
 }
 .sub-menu {
@@ -77,7 +104,6 @@
 /* media */
 @media screen and (min-width: 600px) {
   .menu-main-container {
-    @include grid-row();
     position: relative;
   }
   .main-navigation {

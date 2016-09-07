@@ -237,20 +237,27 @@ $iconLarge: 100px;
  */
 #after-header-widgets {
   .widget_recent_entries {
-    @include grid-row();
+    width: 100%;
+    max-width: 700px;
+    position: absolute;
+    top: -300px;
+    left: 0;
+    right: 0;
     background-color: #fff;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    padding: 30px;
+    margin: 30px auto;
+    padding: 20px;
     border: 1px dotted #fff;
     border-radius: 10px;
     .widget-title {
-      font-size: rem-calc(28);
-      text-align: center;
+      margin-top: 0;
+      margin-bottom: 10px;
+      line-height: 1;
+      font-size: rem-calc(16);
       font-weight: normal;
       color: darken($colorBrown, 20%);
     }
     ul {
+      margin: 0;
       padding-left: 0;
       li {
         border-bottom: 1px dashed $colorSilver;

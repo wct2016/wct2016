@@ -78,13 +78,13 @@
     margin: 0 auto;
     color: transparent;
     @media #{$medium-up} {
-      max-width: 600px;
+      max-width: 500px;
       padding-top: 293px;
-      // height: 293px;
     }
     @media #{$large-up} {
-      max-width: 800px;
-      height: 393px;
+      max-width: 700px;
+      height: 420px;
+      padding-top: 322px;
     }
   }
 }

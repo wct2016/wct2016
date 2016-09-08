@@ -58,6 +58,18 @@
     line-height: 1.0;
     color: $colorWhite;
     font-size: rem-calc(14);
+    @media screen and (min-width: 641px) {
+      font-size: rem-calc(13);
+      padding: $navPadding 8px;
+    }
+    @media screen and (min-width: 1280px) {
+      font-size: rem-calc(13);
+      padding: $navPadding 10px;
+    }
+    @media screen and (min-width: 1366px) {
+      font-size: rem-calc(13);
+      padding: $navPadding 12px;
+    }
   }
   &-item {
     min-height: $navHeight;
@@ -90,12 +102,13 @@
         }
       }
     }
+    // English menu item end
   }
 }
 .sub-menu {
   li {
     min-height: $navHeight;
-    border-top: 1px dotted lighten($colorNav, 50%);
+    border-top: 1px solid lighten($colorNav, 50%);
     a {
       color: $colorWhite;
     }

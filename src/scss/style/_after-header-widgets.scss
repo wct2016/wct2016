@@ -12,33 +12,6 @@
   padding: 0 14px;
 }
 /**
- * desc
- */
-.widgetDesc {
-  text-align: center;
-  &__title {
-    font-weight: normal;
-    font-size: rem-calc(18);
-    color: darken($colorBrown, 20%);
-    @media #{$medium-up} {
-      font-size: rem-calc(24);
-    }
-    @media #{$large-up} {
-      font-size: rem-calc(28);
-    }
-  }
-  &__text {
-    color: lighten($colorText, 10%);
-    font-size: rem-calc(12);
-    @media #{$medium-up} {
-      font-size: rem-calc(14);
-    }
-    @media #{$large-up} {
-      font-size: rem-calc(16);
-    }
-  }
-}
-/**
  * english
  */
 .widgetEn {
@@ -48,6 +21,7 @@
   height: $navHeight;
   text-align: center;
   background-color: lighten($colorBrown, 4%);
+  box-shadow: 0 -2px 3px rgba(0,0,0,.2);
   .home & {
     top: -108px;
   }
@@ -118,8 +92,9 @@ $iconLarge: 100px;
 .widgetFeatured {
   padding: 80px 0 30px 0;
   background-color: lighten($colorOrange, 4%);
-  @media #{$small-only} {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
+  @media #{$medium-up} {
+    padding-top: 100px;
   }
   &__inner {
     @include grid-row();
@@ -157,24 +132,29 @@ $iconLarge: 100px;
     @extend %clearfix;
     margin-bottom: 14px;
     @media #{$small-only} {
-      margin-bottom: 0;
+      margin-bottom: 10px;
     }
   }
   &__title {
     @extend %widgetFeaturedRight;
     font-weight: bold;
     margin-top: 0;
-    margin-bottom: 10px;
     font-size: rem-calc(18);
     color: #fff;
+     line-height: 1.2;
     @media #{$small-only} {
       font-size: rem-calc(14);
+      margin-bottom: 5px;
     }
   }
   &__text {
     @extend %widgetFeaturedRight;
     font-size: rem-calc(13);
     color: #fff;
+    @media #{$small-only} {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
   }
   &__label {
     margin-right: 5px;
@@ -232,7 +212,15 @@ $iconLarge: 100px;
 .home {
   #after-header-widgets {
     .widget_recent_entries {
+      width: 100%;
+      max-width: 930px;
+      position: absolute;
       top: -90px;
+      left: 0;
+      right: 0;
+      background-color: #fff;
+      margin: 30px auto;
+      padding: 20px;
       border: 4px solid darken($colorBeige, 12%);
       @media #{$medium-up} {
         top: -70px;
@@ -240,63 +228,57 @@ $iconLarge: 100px;
       @media #{$large-up} {
         top: -100px;
       }
-    }
-  }
-}
-#after-header-widgets {
-  .widget_recent_entries {
-    width: 100%;
-    max-width: 930px;
-    position: absolute;
-    top: -240px;
-    left: 0;
-    right: 0;
-    background-color: #fff;
-    margin: 30px auto;
-    padding: 20px;
-    @media #{$medium-up} {
-      top: -150px;
-    }
-    @media #{$large-up} {
-      top: -150px;
-    }
-    .widget-title {
-      margin-top: 0;
-      margin-bottom: 10px;
-      line-height: 1;
-      font-size: rem-calc(16);
-      font-weight: normal;
-      color: darken($colorBrown, 20%);
-    }
-    ul {
-      margin: 0;
-      padding-left: 0;
-      li {
-        border-bottom: 1px dashed $colorSilver;
-        padding: 8px 0;
-        &:first-child {
-          position: relative;
-          padding-left: 42px;
-          &:before {
-            content: "new";
-            display: inline-block;
-            position: absolute;
-            top: 10px;
-            left: 0;
-            padding: 4px 6px;
-            background-color: $colorOrange;
-            border-radius: 4px;
-            color: #fff;
-            font-size: rem-calc(12);
-            line-height: 1;
+      .widget-title {
+        margin-top: 0;
+        margin-bottom: 10px;
+        line-height: 1;
+        font-size: rem-calc(14);
+        font-weight: normal;
+        color: darken($colorBrown, 20%);
+        @media #{$medium-up} {
+          font-size: rem-calc(16);
+        }
+      }
+      ul {
+        margin: 0;
+        padding-left: 0;
+        li {
+          border-bottom: 1px dashed $colorSilver;
+          padding: 0;
+          &:first-child {
+            position: relative;
+            padding-left: 42px;
+            padding-bottom: 8px;
+            &:before {
+              content: "new";
+              display: inline-block;
+              position: absolute;
+              top: 0;
+              left: 0;
+              padding: 4px 6px;
+              background-color: $colorOrange;
+              border-radius: 4px;
+              color: #fff;
+              font-size: rem-calc(12);
+              line-height: 1;
+            }
           }
-        }
-        a {
-          font-size: rem-calc(14);
-        }
-        .post-date {
-          font-size: rem-calc(13);
-          color: darken($colorSilver, 20%);
+          a {
+            font-size: rem-calc(13);
+            display: block;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            width: 100%;
+            @media #{$medium-up} {
+              font-size: rem-calc(14);
+              width: 100%;
+            }
+          }
+          .post-date {
+            font-size: rem-calc(13);
+            color: darken($colorSilver, 20%);
+          }
         }
       }
     }

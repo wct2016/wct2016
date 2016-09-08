@@ -116,25 +116,24 @@ html {
   width: 280px;
   padding: 1.3rem;
   position: absolute;
+  top: -208px;
   left: 0;
   right: 0;
   margin: 0 auto;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
   text-shadow: 0 1px 2px #0a8124;
   &:before {
     @include dashicons('\f524');
-    font-size: 18px;
-    margin-right: 5px;
+    font-size: 20px;
+    margin-right: 8px;
   }
   @media #{$medium-up} {
     top: -130px;
+    font-size: rem-calc(20);
   }
   @media #{$large-up} {
     top: -160px;
-  }
-  @media #{$small-only} {
-    top: -210px;
   }
 }
 .btn-register-footer {

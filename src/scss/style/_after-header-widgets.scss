@@ -59,6 +59,9 @@
     margin-top: 0;
     margin-bottom: 10px;
     color: darken($colorBrown, 20%);
+    @media #{$small-only} {
+      font-size: rem-calc(20);
+    }
   }
   &__subTitle {
     color: darken($colorSilver, 20%);
@@ -74,7 +77,7 @@
  * featured
  */
 $iconSmall: 50px;
-$iconLarge: 100px;
+$iconLarge: 120px;
 
 %widgetFeaturedRight {
   margin-left: 60px;
@@ -92,7 +95,7 @@ $iconLarge: 100px;
 .widgetFeatured {
   padding: 80px 0 30px 0;
   background-color: lighten($colorOrange, 4%);
-  margin-bottom: 30px;
+  // margin-bottom: 30px;
   @media #{$medium-up} {
     padding-top: 100px;
   }
@@ -280,6 +283,83 @@ $iconLarge: 100px;
             color: darken($colorSilver, 20%);
           }
         }
+      }
+    }
+  }
+}
+/**
+ * pickup speaker
+ */
+.pickup {
+  background-color: #fff;
+  padding: 60px 0;
+  @media #{$small-only} {
+    padding: 40px 0;
+  }
+  &__inner {
+    @include grid-row();
+  }
+  &__title {
+    @extend .widgetAfterparty__title;
+    margin-bottom: 40px;
+    @media #{$small-only} {
+      margin-bottom: 20px;
+    }
+  }
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 60px;
+    @media #{$small-only} {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+  &__column {
+    max-width: 260px;
+    padding: 0 10px;
+    text-align: center;
+    @media #{$small-only} {
+      margin-bottom: 40px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__thumb {
+    width: 100%;
+    max-width: 240px;
+    >img {
+      border-radius: 50%;
+      border: 2px solid $colorBeige;
+    }
+  }
+  &__name {
+    font-weight: normal;
+    font-size: rem-calc(24);
+    margin-bottom: 12px;
+    line-height: 1.2;
+    color: $colorBrown;
+  }
+  &__session {
+    margin-top: 0;
+    font-size: rem-calc(12);
+    color: darken($colorSilver, 30%);
+    &:before {
+      @include fa("\f130");
+      margin-right: 4px;
+      font-size: 100%;
+    }
+  }
+  &__link {
+    color: $colorOrange;
+    &--large {
+      font-weight: bold;
+      &:after {
+        @include fa("\f101");
+        margin-left: 5px;
+        font-size: 120%;
       }
     }
   }
